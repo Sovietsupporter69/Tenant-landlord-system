@@ -1,0 +1,85 @@
+@startuml
+!theme plain
+
+entity "User" as User {
+  +id: int
+  username: varchar
+  password: varchar
+  type: enum('landlord', 'tenant')
+}
+
+entity "Property" as Property {
+  +id: int
+  landlord_id: int
+  address: varchar
+  rental_price: decimal
+  property_type: varchar
+  amenities: text
+}
+
+entity "PropertyImage" as PropertyImage {
+  +id: int
+  property_id: int
+  image_path: varchar
+}
+
+entity "Document" as Document {
+  +id: int
+  property_id: int
+  document_type: varchar
+  file_path: varchar
+}
+
+entity "Lease" as Lease {
+  +id: int
+  property_id: int
+  tenant_id: int
+  start_date: date
+  end_date: date
+  digital_signature: text
+}
+
+entity "Payment" as Payment {
+  +id: int
+  lease_id: int
+  amount: decimal
+  payment_date: date
+  payment_method: varchar
+}
+
+entity "MaintenanceRequest" as MaintenanceRequest {
+  +id: int
+  property_id: int
+  tenant_id: int
+  description: text
+  urgency: varchar
+}
+
+entity "Message" as Message {
+  +id: int
+  sender_id: int
+  receiver_id: int
+  content: text
+  sent_at: datetime
+}
+
+entity "Report" as Report {
+  +id: int
+  landlord_id: int
+  report_type: varchar
+  generated_at: datetime
+}
+
+User "1" -- "0..*" Property : "owns"
+Property "1" -- "0..*" PropertyImage : "has"
+Property "1" -- "0..*" Document : "has"
+Property "1" -- "0..*" Lease : "related to"
+Lease "1" -- "0..*" Payment : "includes"
+Lease "1" -- "1" User : "leased to"
+MaintenanceRequest "0..*" -- "1" Property : "requested for"
+User "1" -- "0..*" MaintenanceRequest : "requests"
+User "1" -- "0..*" Message : "sends"
+User "0..*" -- "0..*" Message : "receives"
+User "1" -- "0..*" Report : "generates"
+
+@enduml
