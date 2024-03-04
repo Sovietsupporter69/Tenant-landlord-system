@@ -1,0 +1,111 @@
+@startuml
+
+left to right direction
+skinparam packageStyle rectangle
+
+actor Landlord
+actor Tenant
+actor "Prospective Tenant" as ProspectiveTenant
+actor "Prospective Landlord" as ProspectiveLandlord
+
+together {
+  ' landlord exclusive
+  rectangle "Property Management" {
+  (Add Property Listings) as AddProperties
+  (Upload Edited Property Images) as UploadImages
+  (Upload Lease Documents) as UploadDocuments
+  }
+
+  rectangle "Lease Management" {
+    (Generate Digital Lease Agreements) as GenerateLeases
+    (Store Signed Leases) as StoreLeases
+    (Lease Renewal Reminders) as LeaseRenewalReminders
+  }
+}
+
+together {
+  ' shared
+  rectangle "User Authentication" {
+    (Create Landlord Account) as CreateLandlordAccount
+    (Create Tenant Account) as CreateTenantAccount
+    (Secure Login) as Login
+  }
+
+  rectangle "Rent Payment" {
+    (Online Rent Payment) as MakeRentPayment
+    (Rent Payment Reminders) as PaymentReminders
+    (Rent Payment History) as PaymentHistory
+  }
+
+  rectangle "Tenant Management" {
+    (Search for Properties) as SearchProperties
+    (Apply for Rental) as ApplyRental
+    (Approve/Reject Applications) as ReviewApplications
+  }
+
+  rectangle "Maintenance Requests" {
+    (Submit Maintenance Request) as SubmitMaintenance
+    (Manage and Assign Maintenance Tasks) as ManageMaintenance
+  }
+
+  rectangle "Communication Tools" {
+    (Messaging System) as DirectMessaging
+    (Announcements to Tenants) as BroadcastAnnouncements
+  }
+
+  rectangle "Document Management" {
+    (Organize and Access Documents) as ManageDocuments
+  }
+
+  rectangle "Reporting and Analytics" {
+    (Rental Income Reports) as GenerateIncomeReports
+    (Occupancy Rates and Maintenance Expenses Analytics) as DataVisualization
+  }
+  
+  rectangle "Notifications and Alerts" {
+    (Email/Push Notifications for Events) as SendNotifications
+  }
+}
+
+' add a few hidden links to force layout
+Landlord -[hidden]-Tenant
+"Property Management" ---[hidden]- Landlord
+
+' shard block shared actions
+' CreateAccount ---down- Tenant
+Login ---down- Landlord
+Login ---up- Tenant
+PaymentReminders ---up- Landlord
+PaymentReminders ---down- Tenant
+ManageDocuments ---up- Landlord
+ManageDocuments ---down- Tenant
+SendNotifications ---up- Landlord
+SendNotifications ---down- Tenant
+DirectMessaging ---up- Landlord
+DirectMessaging ---down- Tenant
+
+' shared block landlord exclusive
+ReviewApplications ---up- Landlord
+ManageMaintenance ---up- Landlord
+BroadcastAnnouncements ---up- Landlord
+GenerateIncomeReports ---up- Landlord
+DataVisualization ---up- Landlord
+
+' shared block tenant exclusive
+SearchProperties ---down- Tenant
+ApplyRental ---down- Tenant
+MakeRentPayment ---down- Tenant
+PaymentHistory ---down- Tenant
+SubmitMaintenance ---down- Tenant
+
+' landlord exclusive blocks
+AddProperties ---right- Landlord
+UploadImages ---right- Landlord
+UploadDocuments ---right- Landlord
+GenerateLeases ---right- Landlord
+StoreLeases ---right- Landlord
+LeaseRenewalReminders ---right- Landlord
+
+ProspectiveTenant --- CreateTenantAccount
+ProspectiveLandlord --- CreateLandlordAccount
+@enduml
