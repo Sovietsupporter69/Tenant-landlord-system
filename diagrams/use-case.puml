@@ -21,6 +21,11 @@ together {
     (Store Signed Leases) as StoreLeases
     (Lease Renewal Reminders) as LeaseRenewalReminders
   }
+
+    rectangle "Reporting and Analytics" {
+    (Rental Income Reports) as GenerateIncomeReports
+    (Occupancy Rates and Maintenance Expenses Analytics) as DataVisualization
+  }
 }
 
 together {
@@ -56,11 +61,6 @@ together {
   rectangle "Document Management" {
     (Organize and Access Documents) as ManageDocuments
   }
-
-  rectangle "Reporting and Analytics" {
-    (Rental Income Reports) as GenerateIncomeReports
-    (Occupancy Rates and Maintenance Expenses Analytics) as DataVisualization
-  }
   
   rectangle "Notifications and Alerts" {
     (Email/Push Notifications for Events) as SendNotifications
@@ -88,8 +88,6 @@ DirectMessaging ---down- Tenant
 ReviewApplications ---up- Landlord
 ManageMaintenance ---up- Landlord
 BroadcastAnnouncements ---up- Landlord
-GenerateIncomeReports ---up- Landlord
-DataVisualization ---up- Landlord
 
 ' shared block tenant exclusive
 SearchProperties ---down- Tenant
@@ -105,6 +103,8 @@ UploadDocuments ---right- Landlord
 GenerateLeases ---right- Landlord
 StoreLeases ---right- Landlord
 LeaseRenewalReminders ---right- Landlord
+GenerateIncomeReports ---right- Landlord
+DataVisualization ---right- Landlord
 
 ProspectiveTenant --- CreateTenantAccount
 ProspectiveLandlord --- CreateLandlordAccount
