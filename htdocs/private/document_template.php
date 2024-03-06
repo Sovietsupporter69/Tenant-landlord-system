@@ -2,14 +2,14 @@
 // these variables define properties about the page
 // and are managed automatically by the header
 // delete them if you do not need them in your file
-define("title", "Home page");
-// define("special_css", "page specific css");
-// define("special_script", "page specific script");
+define("title", "document title here");
+define("special_css", "page specific css");
+define("special_script", "page specific script");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 ?>
 
-<p>Welcome to the tenant landlord system. This landing page is a placeholder.</p>
+<!-- set the contents of the body here -->
 
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_tail.php");
