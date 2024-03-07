@@ -1,4 +1,36 @@
+div.banner {
+    border: 15px;
+    background-color: yellow;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
 
+div.banner p {
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline;
+    vertical-align: middle;
+}
+
+div.banner > span > a {
+    padding-left: 10px;
+}
+
+body, html {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+span.material-symbols-outlined {
+    vertical-align: middle;
+}
 
 
 @import "mobile.css"  screen and (max-width: 768px);

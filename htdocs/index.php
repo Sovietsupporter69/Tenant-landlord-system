@@ -7,6 +7,7 @@ define("title", "Home page");
 // define("special_script", "page specific script");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 ?>
 
 <p>Welcome to the tenant landlord system. This landing page is a placeholder.</p>

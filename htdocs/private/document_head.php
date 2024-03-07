@@ -9,5 +9,7 @@
         if (defined("special_css"))    { echo('<link rel="stylesheet" href="'.constant("special_css").'">');   }
         if (defined("special_script")) { echo('<script src="'.constant("special_script").'" defer></script>'); }
     ?>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
