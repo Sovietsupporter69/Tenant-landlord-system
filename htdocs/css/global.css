@@ -1,3 +1,7 @@
+@import "mobile.css" screen and (max-width: 768px);
+@import "desktop.css" screen and (min-width: 769px);
+@import "print.css" print;
+
 div.banner {
     border: 15px;
     background-color: yellow;
@@ -32,6 +36,30 @@ span.material-symbols-outlined {
     vertical-align: middle;
 }
 
+
+
+.welcome-banner{
+    text-align: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+}
+.welcome-banner *{
+    animation:fadeIn 3s;
+}
+
+@keyframes fadeIn{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
 .footerContainer {
     position: fixed;
     bottom: 0px;
@@ -46,8 +74,3 @@ span.material-symbols-outlined {
 footer>div {
     text-align: center;
 }
-
-
-@import "mobile.css"  screen and (max-width: 768px);
-@import "desktop.css" screen and (min-width: 769px);
-@import "print.css" print;

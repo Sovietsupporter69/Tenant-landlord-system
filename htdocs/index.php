@@ -9,8 +9,13 @@ define("title", "Home page");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 ?>
+<main>
+    <section class="welcome-banner">
+        <h1>Tenant Landlord System</h1>
+        <h3>Uk's leading leasing company since 2011</h3>
+    </section>
+</main>
 
-<p>Welcome to the tenant landlord system. This landing page is a placeholder.</p>
 
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_tail.php");
