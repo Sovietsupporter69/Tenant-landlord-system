@@ -14,6 +14,9 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
         <h1>Tenant Landlord System</h1>
         <h3>Uk's leading leasing company since 2011</h3>
     </section>
+    <section class="search-box">
+        
+    </section>
 </main>
 
 

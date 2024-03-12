@@ -54,6 +54,13 @@ span.material-symbols-outlined {
 .welcome-banner *{
     animation:fadeIn 3s;
 }
+.search-box{
+    min-height: 200px;
+    width: 50%;
+    background-color: #FAF9F6;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 @keyframes fadeIn{
     0%{opacity: 0;}
