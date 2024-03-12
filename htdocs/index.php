@@ -18,10 +18,30 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
         <h3>Search For properties</h3>
         <form action="" class="home-search">
             <div class="top-search">
-                <label for="location">location</label>
-                <input type="text" name="location" id="location">
+                <div class="left-search-box">
+                    <label for="location">location</label>
+                    <input type="text" name="location" id="location">
+                    <label for="range">Search Range</label>
+                    <select name="range" id="range">
+                        <option value="5">5 miles</option>
+                        <option value="10">10 miles</option>
+                        <option value="15">15 miles</option>
+                        <option value="20">20+ miles</option>
+                    </select>
+                </div>
+                <div class="right-search-box">
+                    <label for="min-price">Min Price</label>
+                    <input type="number" name="min-price" id="min-price">
+                    <label for="max-price">Max Price</label>
+                    <input type="number" name="max-price" id="max-price">
+                </div>
             </div>
-            <div class="bottom-search"></div>
+            <div class="bottom-search">
+                <label for="min-price">Min Price</label>
+                <input type="number" name="min-price" id="min-price">
+                <label for="max-price">Max Price</label>
+                <input type="number" name="max-price" id="max-price">
+            </div>
         </form>
     </section>
 </main>
