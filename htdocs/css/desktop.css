@@ -2,3 +2,6 @@
     min-height: 500px;
     background-image: url("../assets/background-desk.jpg");
 }
+.search-box{
+    margin-top: -150px;
+}

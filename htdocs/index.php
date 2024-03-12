@@ -15,7 +15,14 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
         <h3>Uk's leading leasing company since 2011</h3>
     </section>
     <section class="search-box">
-        
+        <h3>Search For properties</h3>
+        <form action="" class="home-search">
+            <div class="top-search">
+                <label for="location">location</label>
+                <input type="text" name="location" id="location">
+            </div>
+            <div class="bottom-search"></div>
+        </form>
     </section>
 </main>
 
