@@ -18,7 +18,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 
 <div class="InputBoxes">
 
-<form>
+  <form>
     <div class="form-group">
       <label for="usr">Username:</label>
       <input type="text" class="form-control" id="usr">
