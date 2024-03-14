@@ -1,5 +1,5 @@
 <?php
 
-// this sould return paginated data as json
+// this should return paginated data as json
 
 ?>
