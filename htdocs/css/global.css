@@ -8,8 +8,10 @@
         border: 15px;
         background-color: #949994;
         display: flex;
-        flex-direction: column;
+        justify-content: space-between;
+        flex-direction: row;
         padding: 10px;
+        text-decoration: none;
     }
 
     div.banner p {
@@ -20,8 +22,14 @@
         vertical-align: middle;
     }
 
+    div.banner a {
+        font-weight: bold;
+        text-decoration: none;
+    }
+
     div.banner>span>a {
         padding-left: 10px;
+        display: inline;
     }
 
     body,
@@ -37,8 +45,9 @@
 
     span.material-symbols-outlined {
         vertical-align: middle;
+        margin-top: auto;
+        margin-bottom: auto;
     }
-
 
 
     .welcome-banner {
@@ -240,9 +249,5 @@
     .burger.changeBurger>.line:last-child {
         transform: translate(0, -11px) rotate(45deg);
     }
-
-    
-
-
 
 }
