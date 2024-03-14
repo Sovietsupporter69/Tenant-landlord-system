@@ -1,5 +1,7 @@
 <?php
 
-// this should take the property ID as a URL param and return json
+// this should take the search query as a URL paramater and return json
+// params:
+//  query: string
 
 ?>

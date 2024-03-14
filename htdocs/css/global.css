@@ -2,39 +2,41 @@
 @import "desktop.css" screen and (min-width: 769px);
 @import "print.css" print;
 
-div.banner {
-    border: 15px;
-    background-color: #949994;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-}
+@media screen {
+    
+    div.banner {
+        border: 15px;
+        background-color: #949994;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
 
-div.banner p {
-    text-align: left;
-    margin-top: auto;
-    margin-bottom: auto;
-    display: inline;
-    vertical-align: middle;
-}
+    div.banner p {
+        text-align: left;
+        margin-top: auto;
+        margin-bottom: auto;
+        display: inline;
+        vertical-align: middle;
+    }
 
-div.banner > span > a {
-    padding-left: 10px;
-}
+    div.banner > span > a {
+        padding-left: 10px;
+    }
 
-body, html {
-    border: 0px;
-    margin: 0px;
-    padding: 0px;
-}
+    body, html {
+        border: 0px;
+        margin: 0px;
+        padding: 0px;
+    }
 
-* {
-    box-sizing: border-box;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-span.material-symbols-outlined {
-    vertical-align: middle;
-}
+    span.material-symbols-outlined {
+        vertical-align: middle;
+    }
 
 
 
@@ -63,11 +65,6 @@ span.material-symbols-outlined {
     border-radius: 15px;
     text-align: center;
     min-width: 270px;
-    animation:fadeIn 3s;
-    transition:background-color 1s;
-}
-.search-box:hover{
-    background-color: rgb(137, 159, 168);
 }
 .home-search input[type="submit"]{
     width: 80%;
@@ -89,7 +86,6 @@ span.material-symbols-outlined {
     padding-right: 5px;
     align-items: center;
 }
-
 /* .top-search,.left-search-box,.right-search-box,.bottom-search{
     display: flex;
     flex-direction: row;
@@ -135,26 +131,52 @@ span.material-symbols-outlined {
     border:3px white solid;
     border-radius: 10%;
 }
+
 @keyframes fadeIn{
     0%{opacity: 0;}
     100%{opacity: 1;}
 }
 
-.footerContainer {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    background-color: #949994;
-    color: #000;
-    margin: 40px 0 0 0;
-    font-size: 0.8em;
-    padding: 10px;
-}
+    .footerContainer {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        background-color: #949994;
+        color: #000;
+        margin: 40px 0 0 0;
+        font-size: 0.8em;
+        padding: 10px;
+    }
 
-footer>div {
-    text-align: center;
-}
+    footer>div {
+        text-align: center;
+    }
 
 .material-symbols-outlined, a{
     color: #000 ;
+}
+
+/* burger menu */
+.burger>.line {
+    width: 35px;
+    height: 5px;
+    background-color: var(--header-colour);
+    margin: 6px 0;
+    transition: transform 0.4s;
+}
+
+/* Rotate first bar */
+.burger.changeBurger>.line:first-child {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.burger.changeBurger>.line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.changeBurger>.line:last-child {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+
 }
