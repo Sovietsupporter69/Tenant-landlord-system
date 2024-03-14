@@ -46,14 +46,15 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
             </div>
             <div class="bottom-search">
                 <div class="input-top">
-                    <label for="min-price">Min Price</label>
-                    <input type="number" name="min-bedrooms" id="min-price">
+                    <label for="min-price">Min Bedrooms</label>
+                    <input type="number" name="min-bedrooms" id="min-bedrooms">
                 </div>
                 <div class="input-top">
-                    <label for="max-price">Max Price</label>
-                    <input type="number" name="max-bedrooms" id="max-price">
+                    <label for="max-price">Min Bathrooms</label>
+                    <input type="number" name="max-bedrooms" id="max-bedrooms">
                 </div>
             </div>
+            <input type="submit" value="search">
         </form>
     </section>
 </main>
