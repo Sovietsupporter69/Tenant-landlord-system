@@ -2,118 +2,122 @@
 @import "desktop.css" screen and (min-width: 769px);
 @import "print.css" print;
 
-div.banner {
-    border: 15px;
-    background-color: #949994;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-}
+@media screen {
+    
+    div.banner {
+        border: 15px;
+        background-color: #949994;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
 
-div.banner p {
-    text-align: left;
-    margin-top: auto;
-    margin-bottom: auto;
-    display: inline;
-    vertical-align: middle;
-}
+    div.banner p {
+        text-align: left;
+        margin-top: auto;
+        margin-bottom: auto;
+        display: inline;
+        vertical-align: middle;
+    }
 
-div.banner > span > a {
-    padding-left: 10px;
-}
+    div.banner > span > a {
+        padding-left: 10px;
+    }
 
-body, html {
-    border: 0px;
-    margin: 0px;
-    padding: 0px;
-}
+    body, html {
+        border: 0px;
+        margin: 0px;
+        padding: 0px;
+    }
 
-* {
-    box-sizing: border-box;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-span.material-symbols-outlined {
-    vertical-align: middle;
-}
+    span.material-symbols-outlined {
+        vertical-align: middle;
+    }
 
 
 
-.welcome-banner{
-    text-align: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    color: white;
-    font-size: 20px;
-}
-.welcome-banner *{
-    animation:fadeIn 3s;
-}
-.search-box{
-    min-height: 200px;
-    width: 50%;
-    background-color: #FAF9F6;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 15px;
-    text-align: center;
-    min-width: 270px;
-}
-.home-search input[type="submit"]{
-    width: 80%;
-    margin: 10px;
-}
-.home-search input,.home-search select{
-    border-radius: 12px;
-    width: 100%;
-    padding: 10px;
-}
-.home-search{
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-}
-.input-top{
-    display: flex;
-    flex-direction: column;
-    padding-right: 5px;
-    align-items: center;
-}
-/* .top-search,.left-search-box,.right-search-box,.bottom-search{
-    display: flex;
-    flex-direction: row;
-    margin-left: auto;
-    margin-right: auto;
-} */
-#location{
-    width: 100%;
-}
+    .welcome-banner{
+        text-align: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+        color: white;
+        font-size: 20px;
+    }
+    .welcome-banner *{
+        animation:fadeIn 3s;
+    }
+    .search-box{
+        min-height: 200px;
+        width: 50%;
+        background-color: #FAF9F6;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 15px;
+        text-align: center;
+        min-width: 270px;
+    }
+    .home-search input[type="submit"]{
+        width: 80%;
+        margin: 10px;
+    }
+    .home-search input,.home-search select{
+        border-radius: 12px;
+        width: 100%;
+        padding: 10px;
+    }
+    .home-search{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+    }
+    .input-top{
+        display: flex;
+        flex-direction: column;
+        padding-right: 5px;
+        align-items: center;
+    }
+    /* .top-search,.left-search-box,.right-search-box,.bottom-search{
+        display: flex;
+        flex-direction: row;
+        margin-left: auto;
+        margin-right: auto;
+    } */
+    #location{
+        width: 100%;
+    }
 
-@keyframes fadeIn{
-    0%{opacity: 0;}
-    100%{opacity: 1;}
-}
+    @keyframes fadeIn{
+        0%{opacity: 0;}
+        100%{opacity: 1;}
+    }
 
-.footerContainer {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    background-color: #949994;
-    color: #000;
-    margin: 40px 0 0 0;
-    font-size: 0.8em;
-    padding: 10px;
-}
+    .footerContainer {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        background-color: #949994;
+        color: #000;
+        margin: 40px 0 0 0;
+        font-size: 0.8em;
+        padding: 10px;
+    }
 
-footer>div {
-    text-align: center;
-}
+    footer>div {
+        text-align: center;
+    }
 
-.material-symbols-outlined, a{
-    color: #000 ;
+    .material-symbols-outlined, a{
+        color: #000 ;
+    }
+
 }
