@@ -81,6 +81,6 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php")
 
 
 <?php
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/footer.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_tail.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/footer.php")
 ?>
