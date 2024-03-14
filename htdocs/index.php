@@ -19,29 +19,42 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
         <form action="" class="home-search">
             <div class="top-search">
                 <div class="left-search-box">
-                    <label for="location">location</label>
-                    <input type="text" name="location" id="location">
-                    <label for="range">Search Range</label>
-                    <select name="range" id="range">
+                    <div class="input-top">
+                        <label for="location">location</label>
+                        <input type="text" name="location" id="location">
+                    </div>
+                    <div class="input-top">
+                        <label for="range">Range</label>
+                        <select name="range" id="range">
                         <option value="5">5 miles</option>
                         <option value="10">10 miles</option>
                         <option value="15">15 miles</option>
                         <option value="20">20+ miles</option>
                     </select>
+                    </div>
                 </div>
                 <div class="right-search-box">
-                    <label for="min-price">Min Price</label>
-                    <input type="number" name="min-price" id="min-price">
-                    <label for="max-price">Max Price</label>
-                    <input type="number" name="max-price" id="max-price">
+                    <div class="input-top">
+                        <label for="min-price">Min Price</label>
+                        <input type="number" name="min-price" id="min-price">
+                    </div>
+                    <div class="input-top">
+                        <label for="max-price">Max Price</label>
+                        <input type="number" name="max-price" id="max-price">
+                    </div>
                 </div>
             </div>
             <div class="bottom-search">
-                <label for="min-price">Min Price</label>
-                <input type="number" name="min-price" id="min-price">
-                <label for="max-price">Max Price</label>
-                <input type="number" name="max-price" id="max-price">
+                <div class="input-top">
+                    <label for="min-price">Min Bedrooms</label>
+                    <input type="number" name="min-bedrooms" id="min-bedrooms">
+                </div>
+                <div class="input-top">
+                    <label for="max-price">Min Bathrooms</label>
+                    <input type="number" name="max-bedrooms" id="max-bedrooms">
+                </div>
             </div>
+            <input type="submit" value="search">
         </form>
     </section>
 </main>

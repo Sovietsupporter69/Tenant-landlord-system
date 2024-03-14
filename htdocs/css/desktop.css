@@ -5,3 +5,15 @@
 .search-box{
     margin-top: -150px;
 }
+.top-search,.left-search-box,.right-search-box,.bottom-search{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+}
+.left-search-box{
+    padding-left: 10px;
+}
+.right-search-box{
+    padding-right: 10px;
+}
