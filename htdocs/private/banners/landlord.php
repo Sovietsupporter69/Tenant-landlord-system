@@ -8,9 +8,7 @@
             </div>
 
             <div class="burger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+                <span class="material-symbols-outlined">menu</span>
             </div>
         </div>
         <div>
