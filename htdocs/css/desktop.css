@@ -17,3 +17,9 @@
 .right-search-box{
     padding-right: 10px;
 }
+.img-container{
+    max-width: 700px;
+    max-height: 400px;
+    min-width: 500px;
+    min-height: 400px;
+}
