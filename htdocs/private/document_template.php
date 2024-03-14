@@ -5,6 +5,7 @@
 define("title", "document title here");
 define("special_css", "page specific css");
 define("special_script", "page specific script");
+define("header-content", "custom head contents here");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 ?>
