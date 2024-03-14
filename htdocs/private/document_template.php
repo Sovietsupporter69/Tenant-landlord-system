@@ -12,5 +12,6 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 <!-- set the contents of the body here -->
 
 <?php
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/footer.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_tail.php");
 ?>
