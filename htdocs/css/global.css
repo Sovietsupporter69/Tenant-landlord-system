@@ -74,7 +74,7 @@ span.material-symbols-outlined {
     bottom: 0px;
     width: 100%;
     background-color: #949994;
-    color: #fff;
+    color: #000;
     margin: 40px 0 0 0;
     font-size: 0.8em;
     padding: 10px;
@@ -82,4 +82,8 @@ span.material-symbols-outlined {
 
 footer>div {
     text-align: center;
+}
+
+.material-symbols-outlined, a{
+    color: #000 ;
 }
