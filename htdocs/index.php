@@ -10,9 +10,6 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 ?>
 
-<!-- <script src="js/burger-menu.js" defer></script> -->
-
-
 <main>
     <section class="welcome-banner">
         <h1>Tenant Landlord System</h1>

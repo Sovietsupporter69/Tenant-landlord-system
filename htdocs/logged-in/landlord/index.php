@@ -5,9 +5,12 @@
 define("title", "logged in");
 // define("special_css", "page specific css");
 // define("special_script", "page specific script");
+define("header-content", '<script src="/js/burger-menu.js" defer></script>');
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php")
 ?>
+
 
 <!-- set the contents of the body here -->
 
