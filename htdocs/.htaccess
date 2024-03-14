@@ -1,0 +1,6 @@
+# to make this file work you will need to
+# set `AllowOverride All`
+# in your httpd.conf under the
+# <directory> ... </directory> part
+
+ErrorDocument 404 /error/404.php
