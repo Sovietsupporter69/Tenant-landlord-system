@@ -1,6 +1,16 @@
-# to make this file work you will need to
+# to make some parts of this file work you will need to
 # set `AllowOverride All`
 # in your httpd.conf under the
 # <directory> ... </directory> part
+# and enable mod_redirect
 
+# specify error docs
 ErrorDocument 404 /error/404.php
+
+# redirects
+RewriteEngine On
+
+RewriteRule ^(.*)\.html$ $1.php [L]
+
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^(.*)$ /index.php [L]
