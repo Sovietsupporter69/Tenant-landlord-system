@@ -51,6 +51,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
         <option>Landlord</option>
       </select>
       <br>
+      <button>submit </button>
     </div>
   </form>
 
