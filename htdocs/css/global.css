@@ -117,3 +117,26 @@ footer>div {
 .material-symbols-outlined, a{
     color: #000 ;
 }
+
+/* burger menu */
+.burger>.line {
+    width: 35px;
+    height: 5px;
+    background-color: var(--header-colour);
+    margin: 6px 0;
+    transition: transform 0.4s;
+}
+
+/* Rotate first bar */
+.burger.changeBurger>.line:first-child {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.burger.changeBurger>.line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.changeBurger>.line:last-child {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
