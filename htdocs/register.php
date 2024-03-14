@@ -51,14 +51,6 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
         <option>Landlord</option>
       </select>
       <br>
-      <label for="sel2">Mutiple select list (hold shift to select more than one):</label>
-      <select multiple class="form-control" id="sel2">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
     </div>
   </form>
 
