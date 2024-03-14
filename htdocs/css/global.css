@@ -4,7 +4,7 @@
 
 div.banner {
     border: 15px;
-    background-color: yellow;
+    background-color: #949994;
     display: flex;
     justify-content: space-between;
     padding: 10px;
@@ -73,7 +73,7 @@ span.material-symbols-outlined {
     position: fixed;
     bottom: 0px;
     width: 100%;
-    background-color: #9f9f9f;
+    background-color: #949994;
     color: #fff;
     margin: 40px 0 0 0;
     font-size: 0.8em;
