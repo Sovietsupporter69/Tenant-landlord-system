@@ -5,4 +5,7 @@
 .img-container{
     min-width: 200px;
     min-height: 100px;
+    width: 400px;
+    max-height: 267px;
+    height: auto;
 }

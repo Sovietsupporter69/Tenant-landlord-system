@@ -4,7 +4,7 @@
 // delete them if you do not need them in your file
 define("title", "Home page");
 // define("special_css", "page specific css");
-// define("special_script", "page specific script");
+define("special_script", "js/img-scroller.js");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
@@ -67,11 +67,11 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
         With our comprehensive search filters, finding your dream home has never been easier. Start your search today and let us help you find the perfect place to call home in the UK.
         </p>
         <div class="suggested-properties">
-            <span class="material-symbols-outlined arrow">arrow_back_ios</span>
+            <span class="material-symbols-outlined arrow" id="previous-img">arrow_back_ios</span>
             <div class="img-container">
-                <img src="assets/test-property.webp" alt="property">
+                <img src="assets/test-property.webp" alt="property" id="img-slider-img">
             </div>
-            <span class="material-symbols-outlined arrow">arrow_forward_ios</span>
+            <span class="material-symbols-outlined arrow" id="next-img">arrow_forward_ios</span>
         </div>
     </section>
 </main>
