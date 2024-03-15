@@ -1,8 +1,5 @@
 <div class="footerContainer">
-    <?php
-    $year = date("Y");
-    ?>
     <footer>
-        <div>&copy; <?php echo $year?></div>
+        <div>&copy; <?php echo date("Y"); ?> TMS ltd.</div>
     </footer>
 </div>

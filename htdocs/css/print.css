@@ -1,3 +1,5 @@
-div.banner {
+.search-box,
+span.arrow,
+.banner {
     display: none;
 }
