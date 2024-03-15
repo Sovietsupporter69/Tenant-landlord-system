@@ -67,11 +67,11 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
         With our comprehensive search filters, finding your dream home has never been easier. Start your search today and let us help you find the perfect place to call home in the UK.
         </p>
         <div class="suggested-properties">
-            <p class="arrow"><</p>
+            <span class="material-symbols-outlined arrow">arrow_back_ios</span>
             <div class="img-container">
                 <img src="assets/test-property.webp" alt="property">
             </div>
-            <p class="arrow">></p>
+            <span class="material-symbols-outlined arrow">arrow_forward_ios</span>
         </div>
     </section>
 </main>
