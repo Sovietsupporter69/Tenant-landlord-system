@@ -8,10 +8,14 @@
         border: 15px;
         background-color: #949994;
         display: flex;
-        justify-content: space-between;
-        flex-direction: row;
+        flex-direction: column;
         padding: 10px;
         text-decoration: none;
+    }
+
+    #preAuth{
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     div.banner p {

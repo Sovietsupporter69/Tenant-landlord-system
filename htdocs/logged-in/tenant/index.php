@@ -7,6 +7,7 @@ define("title", "logged in");
 // define("special_script", "page specific script");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
 ?>
 
 <!-- set the contents of the body here -->

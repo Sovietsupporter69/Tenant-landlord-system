@@ -1,4 +1,4 @@
-<div class="banner">
+<div class="banner" id = "preAuth">
     <a href="/"><span class="material-symbols-outlined">home</span><p>Home</p></a>
     <span>
         <a href="/auth/login.php"><span class="material-symbols-outlined">person</span><p>Login</p></a>

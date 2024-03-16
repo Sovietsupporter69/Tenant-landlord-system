@@ -3,12 +3,13 @@
         <div class="bannerContainer">
             <div>
                 <a href="/">
-                    <span class="material-symbols-outlined">home</span><p>Home</p>
+                    <span class="material-symbols-outlined">home</span>
+                    <p>Home</p>
                 </a>
             </div>
 
             <div class="burger">
-                <span class="material-symbols-outlined">menu</span>
+            <span class="material-symbols-outlined">menu</span>
             </div>
         </div>
         <div>
@@ -22,3 +23,5 @@
         </div>
     </header>
 </div>
+
+<script src = "js/burger-menu.js" defer></script>

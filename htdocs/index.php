@@ -7,7 +7,8 @@ define("title", "Home page");
 define("special_script", "js/img-scroller.js");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
+//require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 ?>
 
 <main>
