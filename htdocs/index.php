@@ -4,11 +4,13 @@
 // delete them if you do not need them in your file
 define("title", "Home page");
 // define("special_css", "page specific css");
-// define("special_script", "page specific script");
+define("special_script", "img-scroller.js");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
+//require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 ?>
+
 <main>
     <section class="welcome-banner">
         <h1>Tenant Landlord System</h1>
@@ -57,10 +59,26 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
             <input type="submit" value="search">
         </form>
     </section>
+    <section class="home-info">
+        <h3>Uks most trusted rental website</h3>
+        <p class="intro-para">
+        Welcome to our UK home leasing website, your one-stop destination for finding the perfect rental property in the United Kingdom. 
+        Whether you're looking for a cozy apartment in London, a charming cottage in the countryside, or a modern townhouse in Manchester, our user-friendly platform allows you to easily browse through a wide selection of properties, 
+        complete with detailed descriptions, photos. 
+        With our comprehensive search filters, finding your dream home has never been easier. Start your search today and let us help you find the perfect place to call home in the UK.
+        </p>
+        <div class="suggested-properties">
+            <span class="material-symbols-outlined arrow" id="previous-img">arrow_back_ios</span>
+            <div class="img-container">
+                <img src="assets/test-property.webp" alt="property" id="img-slider-img">
+            </div>
+            <span class="material-symbols-outlined arrow" id="next-img">arrow_forward_ios</span>
+        </div>
+    </section>
 </main>
 
 
 <?php
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/footer.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_tail.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/footer.php")
 ?>
