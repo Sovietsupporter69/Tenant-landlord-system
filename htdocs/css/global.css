@@ -3,6 +3,9 @@
 @import "print.css" print;
 
 @media screen {
+    body {
+        background-color: #cecece;
+    }
 
     div.banner {
         border: 15px;
