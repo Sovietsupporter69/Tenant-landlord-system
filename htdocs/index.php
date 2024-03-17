@@ -4,7 +4,7 @@
 // delete them if you do not need them in your file
 define("title", "Home page");
 // define("special_css", "page specific css");
-define("special_script", "js/img-scroller.js");
+define("special_script", "img-scroller.js");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 //require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
