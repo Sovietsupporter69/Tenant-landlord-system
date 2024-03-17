@@ -3,61 +3,58 @@
 // and are managed automatically by the header
 // delete them if you do not need them in your file
 define("title", "register");
-// define("special_css", "page specific css");
+define("special_css", "auth.css");
 // define("special_script", "page specific script");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
 ?>
 
 <main>
 
-<section class="RegisterPageTitle">
-<h1> Register</h1>
-<h3> Register as a tenant or a landlord </h3>
-</section>
+    <section class="RegisterPageTitle">
+        <h1> Register</h1>
+        <h3> Register as a tenant or a landlord </h3>
+    </section>
 
-<div class="InputBoxes">
+    <form action="/API/login.php" method="post">
+        <ul>
+            <li>
+                <label for="usr">Username:</label>
+                <input type="text" class="form-control" id="usr">
+            </li>
+            
+            <li>
+                <label for="usr">Email:</label>
+                <input type="text" class="form-control" id="usr">
+            </li>
+            
+            <li>
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd">
+            </li>
+            
+            <li>
+                <label for="pwd">Confirm password:</label>
+                <input type="password" class="form-control" id="pwd">
+            </li>
+            
+            <li>
+                <label for="sel1">Role:</label>
+                <select class="form-control" id="sel1">
+                    <option>Tenant</option>
+                    <option>Landlord</option>
+                </select>
+            </li>
 
-  <form>
-    <div class="form-group">
-      <label for="usr">Username:</label>
-      <input type="text" class="form-control" id="usr">
-    </div>
-
-    <div class="form-group">
-      <label for="usr">Email:</label>
-      <input type="text" class="form-control" id="usr">
-    </div>
-
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd">
-    </div>
-
-    <div class="form-group">
-      <label for="pwd">Confirm password:</label>
-      <input type="password" class="form-control" id="pwd">
-    </div>
-  </form>
-
-</div>
-
-<form>
-    <div class="form-group">
-      <label for="sel1">Role:</label>
-      <select class="form-control" id="sel1">
-        <option>Tenant</option>
-        <option>Landlord</option>
-      </select>
-      <br>
-      <button>submit </button>
-    </div>
-  </form>
-
+            <li>
+                <input type="submit">
+            </li>
+        </ul>
+    </form>
 </main>
 
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/footer.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_tail.php");
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/private/banners/footer.php");
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/private/document_tail.php");
 ?>
