@@ -20,13 +20,13 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
     <form action="/API/login.php" method="post">
         <ul>
             <li>
-                <label for="usr">Username:</label>
-                <input type="text" class="form-control" id="usr">
+                <label for="name">Username:</label>
+                <input type="text" class="form-control" id="name">
             </li>
             
             <li>
                 <label for="usr">Email:</label>
-                <input type="text" class="form-control" id="usr">
+                <input type="text" class="form-control" id="email">
             </li>
             
             <li>
@@ -35,13 +35,13 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
             </li>
             
             <li>
-                <label for="pwd">Confirm password:</label>
-                <input type="password" class="form-control" id="pwd">
+                <label for="pwd-conf">Confirm password:</label>
+                <input type="password" class="form-control" id="pwd-conf">
             </li>
             
             <li>
-                <label for="sel1">Role:</label>
-                <select class="form-control" id="sel1">
+                <label for="role">Role:</label>
+                <select class="form-control" id="role">
                     <option>Tenant</option>
                     <option>Landlord</option>
                 </select>
