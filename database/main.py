@@ -21,6 +21,7 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     username = Column(String(256))
     password = Column(String(256))
+    email = Column(String(256))
     type = Column(Enum('landlord', 'tenant'))
 
     properties = relationship("Property", back_populates="landlord")
