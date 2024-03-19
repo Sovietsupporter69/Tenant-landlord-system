@@ -24,4 +24,4 @@
     </header>
 </div>
 
-<script src = "js/burger-menu.js" defer></script>
+<script src = "/js/burger-menu.js" defer></script>
