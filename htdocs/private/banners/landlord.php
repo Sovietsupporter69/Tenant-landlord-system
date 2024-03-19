@@ -15,8 +15,9 @@
         <div>
             <nav class="mainNav">
                 <menu>
-                    <li><a href="">Home</a></li>
-                    <li><a href="logged-in/landlord/add_property.php">Add a new property</a></li>
+                    <li><a href="/index.php">Home</a></li>
+                    <li><a href = "/logged-in/landlord/view_all_property.php"> View all property</a></li>
+                    <li><a href="/logged-in/landlord/add_property.php">Add a new property</a></li>
                     <li><a href="">more example text</a></li>
                 </menu>
             </nav>
