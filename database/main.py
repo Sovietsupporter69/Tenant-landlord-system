@@ -1,10 +1,10 @@
 from sqlalchemy import create_engine
 
-USER = 'tenant-landlord'
-PASSWORD = 'tenant-landlord'
+USER = 'tms'
+PASSWORD = 'tms'
 HOST = '127.0.0.1'
 PORT = 3306
-DBNAME = 'tenant-landlord'
+DBNAME = 'tms'
 
 DB_URL = fr'mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DBNAME}'
 
