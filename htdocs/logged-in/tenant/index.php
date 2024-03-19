@@ -10,7 +10,23 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
 ?>
 
-<!-- set the contents of the body here -->
+<main>
+    <section class="leased-properties">
+        <h2>Leased Properties</h2>
+        <div class="property">
+            <div class="lease-image">
+                <img src="test-property" alt="property">
+            </div>
+            <div class="lease-info">
+                <p>Property:63 boston street</p>
+                <p>Postcode:SH2 5RD</p>
+                <p>Next Rent:13/04/23
+            </div>
+
+        </div>
+
+    </section>
+</main>
 
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/footer.php");
