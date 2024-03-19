@@ -16,7 +16,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
         <a href="">
             <div class="property">
                 <div class="lease-image">
-                    <img src="../../assets/test-property.webp" alt="property">
+                    <img src="/assets/test-property.webp" alt="property">
                 </div>
                 <div class="lease-info">
                     <h3>Property Name</h3>
