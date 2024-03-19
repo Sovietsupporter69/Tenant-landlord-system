@@ -16,16 +16,16 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
         <h1>Login</h1>
     </section>
 
-    <form action="/API/login.php" method="post">
+    <form action="/API/auth/login.php" method="post">
         <ul>
             <li>
                 <label for="usr">Email:</label>
-                <input type="text" class="form-control" id="email" required>
+                <input type="text" class="form-control" id="email" name="email" required>
             </li>
             
             <li>
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" required>
+                <input type="password" class="form-control" id="pwd" name="password" required>
             </li>
 
             <li>
