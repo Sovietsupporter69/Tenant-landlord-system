@@ -15,6 +15,19 @@ CREATE USER tms@127.0.0.1 IDENTIFIED BY 'tms';
 CREATE DATABASE tms;
 ```
 
+4) give user permissions
+
+```sql
+GRANT ALL PRIVILEGES ON tms.* TO tms@127.0.0.1 IDENTIFIED BY 'tms';
+```
+This could be made more secure
+
+5) flush permissions
+
+```sql
+flush privileges;
+```
+
 ## setup python
 
 1) navigate to this folder
