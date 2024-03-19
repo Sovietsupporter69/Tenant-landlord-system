@@ -2,12 +2,12 @@
 // these variables define properties about the page
 // and are managed automatically by the header
 // delete them if you do not need them in your file
-define("title", "register");
+define("title", "add property");
 define("special_css", "auth.css");
 // define("special_script", "page specific script");
 
 require_once ($_SERVER["DOCUMENT_ROOT"] . "/private/document_head.php");
-require_once ($_SERVER["DOCUMENT_ROOT"] . "/private/banners/pre_auth.php");
+require_once ($_SERVER["DOCUMENT_ROOT"] . "/private/banners/landlord.php");
 ?>
 
 <div id="main">
