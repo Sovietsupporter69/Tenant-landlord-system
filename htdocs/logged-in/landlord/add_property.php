@@ -41,24 +41,12 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/private/banners/landlord.php");
 
             <li>
                 <label for="numOfBedrooms">Number of bedrooms:</label>
-                <select class="form-control" id="numBedrooms" required>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5+</option>
-                </select>
+                <input type="number" name="form-control" id="numOfBedrooms">
             </li>
 
             <li>
                 <label for="numOfBathrooms">Number of bathrooms:</label>
-                <select class="form-control" id="numBathrooms" required>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5+</option>
-                </select>
+                <input type="number" name="form-control" id="numOfBathrooms">
             </li>
 
             <li>
