@@ -10,7 +10,9 @@ define("header-content", '<script src="/js/burger-menu.js" defer></script>');
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php")
 ?>
-
+<div>
+    <h1> View properties </h1>
+</div>
 
 
 <?php

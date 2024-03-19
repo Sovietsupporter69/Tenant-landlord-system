@@ -297,4 +297,9 @@
         transform: translate(0, -11px) rotate(45deg);
     }
 
+    div>h1{
+        text-align: center;
+        text-decoration: underline;
+    }
+
 }
