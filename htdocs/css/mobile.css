@@ -9,3 +9,20 @@
     max-height: 267px;
     height: auto;
 }
+.leased-properties h2{
+    text-align: center;
+}
+.property{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.lease-image{
+    max-width: 240px;
+    padding-top: 10px;
+}
+.leased-properties a{
+   max-width: 338px;
+}
