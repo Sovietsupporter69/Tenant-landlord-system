@@ -18,10 +18,10 @@ Base = declarative_base()
 
 class User(Base):
     __tablename__ = 'user'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     username = Column(String(256))
     password = Column(String(256))
-    email = Column(String(256))
+    email = Column(String(256), unique=True)
     type = Column(Enum('landlord', 'tenant'))
 
     properties = relationship("Property", back_populates="landlord")
