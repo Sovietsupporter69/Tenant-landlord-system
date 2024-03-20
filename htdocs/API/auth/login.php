@@ -39,7 +39,21 @@ if ($user['password'] != $password) {
     die();
 }
 
-// store client secret in redis
+// store client secret in cookie+redis
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/redis.php");
+
+$secret = bin2hex(random_bytes(32));
+$redis_client->setex($secret, 60 * 20, $user['id']);
+
+setcookie("auth", $secret, path:'/', httponly:true);
+
+// redirect to logged in homepage
+
+if ($user['type'] == 'landlord') {
+    header("Location: /logged-in/landlord/index.php");
+    die();
+}
+
+header("Location: /logged-in/tenant/index.php");
 
 ?>
