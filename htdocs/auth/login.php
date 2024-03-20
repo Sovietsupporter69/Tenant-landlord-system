@@ -18,10 +18,10 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 
     <?php
     if (isset($_GET['invalid'])) {
-        echo('<p class="invalid-un-pw">Invalid Username or Password</p>');
+        echo('<p class="error">Invalid Username or Password</p>');
     }
     if (isset($_GET['expired'])) {
-        echo('<p class="invalid-un-pw">Login Token Expired</p>');
+        echo('<p class="error">Login Token Expired</p>');
     }
     ?>
 

@@ -17,6 +17,28 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
         <h3>Register as a tenant or a landlord </h3>
     </section>
 
+    <?php
+    if (isset($_GET['invalid-name'])) {
+        echo('<p class="error">Invalid Name</p>');
+    }
+
+    if (isset($_GET['invalid-email'])) {
+        echo('<p class="error">Invalid Email Address</p>');
+    }
+
+    if (isset($_GET['missing-password'])) {
+        echo('<p class="error">Password is required</p>');
+    }
+
+    if (isset($_GET['passwords-no-match'])) {
+        echo('<p class="error">Passwords do not match</p>');
+    }
+
+    if (isset($_GET['invalid-role'])) {
+        echo('<p class="error">Invalid Role</p>');
+    }
+    ?>
+
     <form action="/API/auth/register.php" method="post">
         <ul>
             <li>

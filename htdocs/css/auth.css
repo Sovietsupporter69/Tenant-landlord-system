@@ -45,7 +45,7 @@ section.title {
     div#main { max-width: 40%; }
 }
 
-p.invalid-un-pw {
+p.error {
     display: block;
     background-color: red;
     padding-top: 10px;
