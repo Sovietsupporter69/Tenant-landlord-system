@@ -42,6 +42,8 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
             </li>
         </ul>
     </form>
+
+    <a href="/auth/password-reset.php" class="centre">reset password</a></li>
 </div id="main">
 
 <?php

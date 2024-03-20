@@ -11,11 +11,14 @@ li {
 
 label {
     font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 input {
     border-radius: 10px;
     border-width: 0px;
+    height: 1cm;
 }
 
 input[type=submit] {
