@@ -23,6 +23,9 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
     if (isset($_GET['expired'])) {
         echo('<p class="error">Login Token Expired</p>');
     }
+    if (isset($_GET['email-exists'])) {
+        echo('<p class="error">Account Already Exists</p>');
+    }
     ?>
 
     <form action="/API/auth/login.php" method="post">

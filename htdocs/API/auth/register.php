@@ -61,7 +61,17 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
 $stmt = $conn->prepare("INSERT INTO user (username, password, email, type) VALUES (?, ?, ?, ?);
 ");
 $stmt->bind_param("ssss", $name, $pwd, $email, $role);
-$stmt->execute();
+
+try {
+    $stmt->execute();
+}
+catch (mysqli_sql_exception $e) {
+    // 1062 is a duplicate entry
+    if ($e->getCode() == 1062) {
+        header("Location: /auth/login.php?email-exists");
+        die;
+    }
+}
 
 // redirect user to login screen
 header("Location: /auth/login.php");
