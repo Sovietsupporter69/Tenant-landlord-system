@@ -48,6 +48,11 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
             </li>
 
             <li>
+                <label for="TOS">Accept <a href="/tos.php">Terms and conditions</a>:</label>
+                <input type="checkbox" id="TOS" required>
+            </li>
+
+            <li>
                 <input type="submit">
             </li>
         </ul>
