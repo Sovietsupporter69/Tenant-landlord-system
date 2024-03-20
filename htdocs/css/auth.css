@@ -44,3 +44,12 @@ section.title {
 @media (min-width: 769px) {
     div#main { max-width: 40%; }
 }
+
+p.invalid-un-pw {
+    display: block;
+    background-color: red;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+}

@@ -5,7 +5,8 @@ if (isset($_POST['email'])) {
     $email = $_POST['email'];
 }
 else {
-    die("missing email");
+    header("Location: /auth/login.php?invalid");
+    die();
 }
 
 // validate password is set
@@ -13,7 +14,8 @@ if (isset($_POST['password'])) {
     $password = $_POST['password'];
 }
 else {
-    die("missing password");
+    header("Location: /auth/login.php?invalid");
+    die();
 }
 
 // run database query to get user matching email
@@ -26,11 +28,15 @@ $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 
 // if no user with email redirect and die 
-if (mysqli_num_rows($result) == 0) { die("invalid email"); }
+if (mysqli_num_rows($result) == 0) {
+    header("Location: /auth/login.php?invalid");
+    die();
+}
 
 // this needs to be hashed
 if ($user['password'] != $password) {
-    die("invalid password");
+    header("Location: /auth/login.php?invalid");
+    die();
 }
 
 // store client secret in redis

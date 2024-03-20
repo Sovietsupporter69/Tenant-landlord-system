@@ -16,6 +16,12 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
         <h1>Login</h1>
     </section>
 
+    <?php
+    if (isset($_GET['invalid'])) {
+        echo('<p class="invalid-un-pw">Invalid Username or Password');
+    }
+    ?>
+
     <form action="/API/auth/login.php" method="post">
         <ul>
             <li>
