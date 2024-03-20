@@ -17,31 +17,31 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
         <h3>Register as a tenant or a landlord </h3>
     </section>
 
-    <form action="/API/login.php" method="post">
+    <form action="/API/auth/register.php" method="post">
         <ul>
             <li>
                 <label for="name">Username:</label>
-                <input type="text" class="form-control" id="name" required>
+                <input type="text" class="form-control" id="name" name="name" required>
             </li>
             
             <li>
                 <label for="usr">Email:</label>
-                <input type="text" class="form-control" id="email" required>
+                <input type="text" class="form-control" id="email" name="email" required>
             </li>
             
             <li>
                 <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" required>
+                <input type="password" class="form-control" id="pwd" name="pwd" required>
             </li>
             
             <li>
                 <label for="pwd-conf">Confirm password:</label>
-                <input type="password" class="form-control" id="pwd-conf" required>
+                <input type="password" class="form-control" id="pwd-conf" name="pwd2" required>
             </li>
             
             <li>
                 <label for="role">Role:</label>
-                <select class="form-control" id="role" required>
+                <select class="form-control" id="role" name="role" required>
                     <option>Tenant</option>
                     <option>Landlord</option>
                 </select>
@@ -49,7 +49,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
 
             <li>
                 <label for="TOS">Accept <a href="/tos.php">Terms and conditions</a>:</label>
-                <input type="checkbox" id="TOS" required>
+                <input type="checkbox" id="TOS" name="TOS" required>
             </li>
 
             <li>
