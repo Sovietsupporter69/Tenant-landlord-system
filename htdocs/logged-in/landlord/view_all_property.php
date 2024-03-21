@@ -14,6 +14,23 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php")
     <h1> View properties </h1>
 </div>
 
+<!-- this will be echoed for each property that the landlord owns -->
+<div>
+<section class="leased-properties">
+        <a href="">
+            <div class="property">
+                <div class="lease-image">
+                    <img src="/assets/test-property.webp" alt="property">
+                </div>
+                <div class="lease-info">
+                    <p>Property: Example address</p>
+                    <p>Postcode: Example postcode</p>
+                </div>
+            </div>
+        </a>
+    </section>
+</div>
+
 
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/footer.php");
