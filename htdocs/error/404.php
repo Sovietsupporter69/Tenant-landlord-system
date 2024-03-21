@@ -11,15 +11,16 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 ?>
 
-<div class="errorMessage">
+<div class="error">
 <h1>Error 404</h1>
+</div>
+
+<div class="wrongFile">
 <p>The requested file was not found on this server.</p>
 <p>
     <a href="/">Click here</a> to go to the homepage.
 </p>
 </div>
-
-
 
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/footer.php");

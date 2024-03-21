@@ -59,7 +59,11 @@
     margin-left: 109px;
     margin-right: 109px;
 }
-.errorMessage{
+.error{
     text-align: center;
     padding-top: 100px;
+    padding-bottom: 50px;
+}
+.wrongFile{
+    text-align: center;
 }
