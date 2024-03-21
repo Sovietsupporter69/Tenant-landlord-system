@@ -12,7 +12,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 ?>
 
 <main>
-    <body style="background-color: red;">
+    <body style="background-color: sage;">
     
 
 <div class="error">
