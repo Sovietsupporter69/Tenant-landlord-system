@@ -31,7 +31,7 @@ flush privileges;
 ## setup python
 
 1) navigate to this folder
-2) create a venv with python
+2) create a venv with python using `py -m venv .venv` in the root folder
 3) run `pip install requirements.txt`
 
 ## create database tables
