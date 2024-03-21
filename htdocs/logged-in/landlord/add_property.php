@@ -50,7 +50,7 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/private/banners/landlord.php");
             </li>
 
             <li>
-                <label for="descrpition">descrption of property:</label>
+                <label for="descrpition">Descrption of property:</label>
                 <input type="text" class="form-control" id="descrpition" required>
             </li>
 
