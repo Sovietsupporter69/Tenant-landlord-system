@@ -56,3 +56,12 @@ p.error {
     border-radius: 10px;
     text-align: center;
 }
+
+p.success {
+    display: block;
+    background-color: green;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    text-align: center;
+}

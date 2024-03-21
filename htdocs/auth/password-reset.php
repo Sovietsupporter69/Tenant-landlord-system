@@ -20,6 +20,12 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
     if (isset($_GET['invalid'])) {
         echo('<p class="error">Invalid Email</p>');
     }
+    if (isset($_GET['cooldown'])) {
+        echo('<p class="error">Email already sent</p>');
+    }
+    if (isset($_GET['sent'])) {
+        echo('<p class="success">Email sent</p>');
+    }
     ?>
 
     <form action="/API/auth/password-reset.php" method="post">
@@ -34,7 +40,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
             </li>
         </ul>
     </form>
-    
+
 </div id="main">
 
 <?php
