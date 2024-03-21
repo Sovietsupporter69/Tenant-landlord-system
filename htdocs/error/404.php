@@ -8,7 +8,7 @@ define("special_script", "page specific script");
 
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 ?>
 
 <div class="errorMessage">
