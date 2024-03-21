@@ -54,3 +54,8 @@
     display: none;
     flex-direction: row;
 }
+.search-box-properties{
+
+    margin-left: 109px;
+    margin-right: 109px;
+}

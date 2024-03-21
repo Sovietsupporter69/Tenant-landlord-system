@@ -55,7 +55,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
                     </div>
                 </div>
             </div>
-            <input type="submit" value="search">
+            <input class ="property-search" id ="property-search" type="submit" value="search">
         </form>
     </section>
     <section class="leased-properties">

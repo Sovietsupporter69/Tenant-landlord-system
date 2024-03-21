@@ -179,6 +179,9 @@
         background-color:#FAF9F6;
         border-radius: 12px;
     }
+    #property-search{
+        width: 100%;
+    }
     .lease-image{
         display: flex;
         width: 100%;
@@ -202,12 +205,14 @@
         text-align: center;
         margin-bottom: 0px;
     }
+    
+
     .top-search-property{
-        width:80%;
+        width:100%;
     }
     .left-search-box-property{
         display: flex;
-        flex:80%;
+        flex:100%;
     }
     .right-search-box-property{
         display: flex;
@@ -222,7 +227,7 @@
         font-size: 20px;
     }
     .hidden-search{
-        width:80%;
+        width:100%;
         display: none;
     }
     .right-search-box-property .input-top{
