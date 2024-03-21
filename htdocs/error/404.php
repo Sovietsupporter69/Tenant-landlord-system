@@ -6,6 +6,8 @@ define("title", "Error 404");
 define("special_css", "page specific css");
 define("special_script", "page specific script");
 
+
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 ?>
 
@@ -18,6 +20,9 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 </div>
 
 
+
 <?php
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/footer.php");
+
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_tail.php");
 ?>
