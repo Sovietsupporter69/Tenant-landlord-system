@@ -11,6 +11,10 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 ?>
 
+<main>
+    <body style="background-color: red;">
+    
+
 <div class="error">
 <h1>Error 404</h1>
 </div>
@@ -21,6 +25,8 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
     <a href="/">Click here</a> to go to the homepage.
 </p>
 </div>
+</body>
+</main>
 
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/footer.php");
