@@ -26,3 +26,12 @@
 .leased-properties a{
    max-width: 338px;
 }
+.top-search-property{
+    display: flex;
+    flex-direction: column;
+  
+}
+.hidden-search{
+    display: none;
+    flex-direction: column;
+}

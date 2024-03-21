@@ -204,9 +204,6 @@
     }
     .top-search-property{
         width:80%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
     }
     .left-search-box-property{
         display: flex;
@@ -225,7 +222,12 @@
         font-size: 20px;
     }
     .hidden-search{
+        width:80%;
         display: none;
+    }
+    .right-search-box-property .input-top{
+        display: flex;
+        flex: 95%
     }
     @keyframes fadeIn {
         0% {

@@ -31,9 +31,9 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
                         <option value="20">20+ miles</option>
                     </select>
                     </div>
-                </div>
-                <div class="search-expand">
-                    <span class="material-symbols-outlined drop-down" onclick="searchExpand()">arrow_drop_down</span>
+                    <div class="search-expand">
+                        <span class="material-symbols-outlined drop-down" onclick="searchExpand()">arrow_drop_down</span>
+                    </div>
                 </div>
             </div>
                 <div class="hidden-search" id="hidden-search">
@@ -45,10 +45,33 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
                         <label for="max-price">Max Price</label>
                         <input type="number" name="max-price" id="max-price">
                     </div>
+                    <div class="input-top">
+                        <label for="range">Property Type</label>
+                        <select name="property-type" id="property-type">
+                        <option value="house">Houses</option>
+                        <option value="apartment">Apartments</option>
+                        <option value="bungalow">Bungalows</option>
+                    </select>
+                    </div>
                 </div>
             </div>
             <input type="submit" value="search">
         </form>
+    </section>
+    <section class="leased-properties">
+        <a href="">
+            <div class="property">
+                <div class="lease-image">
+                    <img src="/assets/test-property.webp" alt="property">
+                </div>
+                <div class="lease-info">
+                    <h3>Property Name</h3>
+                    <p>Property:63 boston street</p>
+                    <p>Postcode:SH2 5RD</p>
+                    <p>Next Rent:13/04/23</p>
+                </div>
+            </div>
+        </a>
     </section>
 </main>
 

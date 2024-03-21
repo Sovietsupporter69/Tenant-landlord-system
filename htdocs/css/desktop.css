@@ -45,3 +45,12 @@
     max-width: 290px;
     min-width: 290px;
 }
+.top-search-property{
+    display: flex;
+    flex-direction: row;
+    
+}
+.hidden-search{
+    display: none;
+    flex-direction: row;
+}
