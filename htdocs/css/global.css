@@ -202,7 +202,31 @@
         text-align: center;
         margin-bottom: 0px;
     }
-
+    .top-search-property{
+        width:80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .left-search-box-property{
+        display: flex;
+        flex:80%;
+    }
+    .right-search-box-property{
+        display: flex;
+        flex:15%
+    }
+    .search-expand{
+        display: flex;
+        flex:5%;
+        justify-content: flex-end;
+    }
+    .drop-down{
+        font-size: 20px;
+    }
+    .hidden-search{
+        display: none;
+    }
     @keyframes fadeIn {
         0% {
             opacity: 0;
