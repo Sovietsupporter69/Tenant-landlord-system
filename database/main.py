@@ -1,5 +1,7 @@
 from sqlalchemy import create_engine
 
+GEN_DATA = True
+
 USER = 'tms'
 PASSWORD = 'tms'
 HOST = '127.0.0.1'
@@ -118,3 +120,11 @@ class Report(Base):
     landlord = relationship("User", back_populates="reports")
 
 Base.metadata.create_all(engine)
+
+from sqlalchemy import insert
+
+if (GEN_DATA) :
+    conn.execute(insert(User).values(username = "john doe", password = "passwd", email="john.doe@example.com", type="tenant"))
+    conn.execute(insert(User).values(username = "jane doe", password = "passwd", email="jane.doe@example.com", type="landlord"))
+
+conn.commit()
