@@ -21,10 +21,14 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 
 <div class="wrongFile">
 <p>The requested file was not found on this server.</p>
-<p>
-    <a href="/">Click here</a> to go to the homepage.
-</p>
 </div>
+
+<div class="homePageLink">
+   <p>
+    <a href="/">Click here</a> to go to the homepage.
+</p> 
+</div>
+
 </body>
 </main>
 
