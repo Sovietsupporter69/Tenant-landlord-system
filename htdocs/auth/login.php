@@ -32,7 +32,9 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
         <ul>
             <li>
                 <label for="usr">Email:</label>
-                <input type="text" class="form-control" id="email" name="email" required>
+                <input type="text" class="form-control" id="email" name="email"<?php 
+                    if (isset($_GET['email'])) { $email=$_GET['email']; echo(" value=\"$email\" "); }
+                ?>required>
             </li>
             
             <li>

@@ -14,7 +14,7 @@ if (isset($_POST['password'])) {
     $password = $_POST['password'];
 }
 else {
-    header("Location: /auth/login.php?invalid");
+    header("Location: /auth/login.php?invalid&email=$email");
     die();
 }
 
@@ -29,13 +29,13 @@ $user = $result->fetch_assoc();
 
 // if no user with email redirect and die 
 if (mysqli_num_rows($result) == 0) {
-    header("Location: /auth/login.php?invalid");
+    header("Location: /auth/login.php?invalid&email=$email");
     die();
 }
 
 // this needs to be hashed
 if ($user['password'] != $password) {
-    header("Location: /auth/login.php?invalid");
+    header("Location: /auth/login.php?invalid&email=$email");
     die();
 }
 
