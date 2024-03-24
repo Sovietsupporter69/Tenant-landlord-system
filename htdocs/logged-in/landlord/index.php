@@ -1,8 +1,16 @@
 <?php
 
-function render_listing($image, $address, $postcode, $cost) {
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/check_auth.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
+
+$stmt = $conn->prepare("SELECT * FROM property WHERE landlord_id = ?;");
+$stmt->bind_param("s", $userid);
+$stmt->execute();
+$result = $stmt->get_result();
+
+function render_listing($id, $image, $address, $postcode, $cost) {
     $code = <<<EOT
-    <a href="">
+    <a href="property?id=$id">
     <div class="property">
     <div class="lease-image">
     <img src="$image" alt="property">
@@ -36,13 +44,17 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php")
     <h1> View properties </h1>
 </div>
 
-<!-- this will be echoed for each property that the landlord owns -->
 <div>
 <section class="leased-properties">
         <?php
-            render_listing("/assets/test-property.webp", "13 church lane", "JA23 6PE", "1200");
-            render_listing("/assets/test-property-2.webp", "12 smith road", "DA12 2RE", "1700");
-            render_listing("/assets/test-property-3.webp", "13 morgan street", "JO67 8XE", "900");
+
+            // images need fixing
+            if (mysqli_num_rows($result) > 0) {
+                while($row = mysqli_fetch_assoc($result)) {
+                    render_listing($row['id'], '', $row['address'], $row['address'], $row['rental_price']);
+                }
+            }
+
         ?>
     </section>
 </div>
