@@ -124,7 +124,27 @@ Base.metadata.create_all(engine)
 from sqlalchemy import insert
 
 if (GEN_DATA) :
+    # users
     conn.execute(insert(User).values(username = "john doe", password = "passwd", email="john.doe@example.com", type="tenant"))
     conn.execute(insert(User).values(username = "jane doe", password = "passwd", email="jane.doe@example.com", type="landlord"))
+
+    conn.execute(insert(User).values(username = "alex smith", password = "password123", email="alex.smith@example.com", type="tenant"))
+    conn.execute(insert(User).values(username = "mike brown", password = "mypassword", email="mike.brown@example.net", type="tenant"))
+    conn.execute(insert(User).values(username = "chris jones", password = "1234password", email="chris.jones@example.org", type="tenant"))
+
+    conn.execute(insert(User).values(username = "sarah green", password = "pass1234", email="sarah.green@example.net", type="landlord"))
+    conn.execute(insert(User).values(username = "lisa white", password = "securepass", email="lisa.white@example.com", type="landlord"))
+    conn.execute(insert(User).values(username = "emma taylor", password = "password5678", email="emma.taylor@example.org", type="landlord"))
+
+    # properties
+    conn.execute(insert(Property).values(landlord_id="2", address="1 church lane, SW11 5AD", rental_price="1300", property_type="detached"))
+    conn.execute(insert(Property).values(landlord_id="2", address="24 Baker Street, NW1 6XE", rental_price="1500", property_type="semi-detached"))
+    conn.execute(insert(Property).values(landlord_id="2", address="76 High Street, SE1 1NH", rental_price="1200", property_type="flat"))
+
+    conn.execute(insert(Property).values(landlord_id="6", address="58 Victoria Road, SW1 1AD", rental_price="1400", property_type="detached"))
+    conn.execute(insert(Property).values(landlord_id="6", address="102 Hill Road, NW3 2AL", rental_price="1600", property_type="terrace"))
+    conn.execute(insert(Property).values(landlord_id="7", address="33 Queen Street, W1 8HL", rental_price="1350", property_type="flat"))
+    conn.execute(insert(Property).values(landlord_id="8", address="67 Park Avenue, SW2 4ER", rental_price="1550", property_type="semi-detached"))
+
 
 conn.commit()
