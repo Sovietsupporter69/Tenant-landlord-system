@@ -51,7 +51,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php")
             // images need fixing
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
-                    render_listing($row['id'], '', $row['address'], $row['address'], $row['rental_price']);
+                    render_listing($row['id'], '', $row['address'], $row['postcode'], $row['rental_price']);
                 }
             }
 
