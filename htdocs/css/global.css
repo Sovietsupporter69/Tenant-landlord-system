@@ -234,6 +234,72 @@
         display: flex;
         flex: 95%
     }
+    .rent-due,.payment-history,.payment button{
+        background-color: #FAF9F6;
+    }
+    .rent a{
+        text-decoration: 0px;
+    }
+    .rent{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        flex-direction: column;
+    }
+    .rent-due{
+        border:2px solid black;
+        margin: 20px;
+        border-radius: 12px;
+    }
+    .rent-due p{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    .rent button{
+        width: 80%;
+        max-width: 128px;
+        padding: 10px;
+        border-radius: 12px;
+    }
+    .payment-history{
+        border:2px solid black;
+        border-radius: 12px;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        min-height: 200px;
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        max-height: 300px;
+        max-width: 641px;
+    }
+    .payments{
+        border: 2px solid black;
+        margin: 10px;
+        height: 90%;
+        width: 90%;
+        border-radius: 12px;
+        overflow-y:auto;
+    }
+    .payment{
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid black;
+    }
+    .payment *{
+        display: flex;
+        flex: 33%;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+    .payment button{
+        border-radius: 0px;
+        border: 0px;
+        border-left: 2px solid black;
+        flex:33%;
+    }
     @keyframes fadeIn {
         0% {
             opacity: 0;
