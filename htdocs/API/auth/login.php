@@ -21,7 +21,7 @@ else {
 // run database query to get user matching email
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
 
-$stmt = $conn->prepare("SELECT user.id, user.username, user.password FROM user WHERE user.email = ?");
+$stmt = $conn->prepare("SELECT user.id, user.username, user.password, user.type FROM user WHERE user.email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $result = $stmt->get_result();
