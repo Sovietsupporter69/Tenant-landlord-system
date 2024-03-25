@@ -1,4 +1,6 @@
 <?php
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/check_auth.php");
+
 // these variables define properties about the page
 // and are managed automatically by the header
 // delete them if you do not need them in your file

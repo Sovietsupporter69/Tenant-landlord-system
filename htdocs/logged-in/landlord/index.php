@@ -54,6 +54,9 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php")
                     render_listing($row['id'], '', $row['address'], $row['postcode'], $row['rental_price']);
                 }
             }
+            else {
+                echo("<p>You have no properties to display</p>");
+            }
 
         ?>
     </section>
