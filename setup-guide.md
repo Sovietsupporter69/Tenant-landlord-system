@@ -145,3 +145,25 @@ scoop install main/mysql
 you only need one. I recommend MariaDB.
 
 to setup the database go to the specific [database setup guide](https://github.com/Sovietsupporter69/Tenant-landlord-system/blob/master/database/docs.md)
+
+### cloudflare tunnel (optional)
+
+cloudflare tunnels allows you to test the project with a CDN and HTTPS
+
+install cloudflared via:
+```powershell
+scoop install main/cloudflared
+```
+
+run a cloudflare tunnel like
+```powershell
+cloudflared.exe --url localhost:80
+```
+
+click the link displayed in the terminal, it will look like:
+```
++--------------------------------------------------------------------------------------------+
+|  Your quick Tunnel has been created! Visit it at (it may take some time to be reachable):  |
+|  https://causing-eastern-determination-fog.trycloudflare.com                               |
++--------------------------------------------------------------------------------------------+
+```
