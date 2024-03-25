@@ -234,17 +234,27 @@
         display: flex;
         flex: 95%
     }
-    .rent-due,.payment-history,.payment button{
+    .rent-due,.payment-history,.payment button,.maintenance-history,.request button{
         background-color: #FAF9F6;
     }
-    .rent a{
+    .rent a, .maintenance a{
         text-decoration: 0px;
     }
-    .rent{
+    .rent,.maintenance{
         display: flex;
         align-items: center;
         justify-content:center;
         flex-direction: column;
+    }
+    .maintenance-img{
+        width: 80%;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+    .maintenance-img img{
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
     }
     .rent-due{
         border:2px solid black;
@@ -255,13 +265,13 @@
         margin-left: 100px;
         margin-right: 100px;
     }
-    .rent button{
+    .rent button, .maintenance button{
         width: 80%;
         max-width: 128px;
         padding: 10px;
         border-radius: 12px;
     }
-    .payment-history{
+    .payment-history, .maintenance-history{
         border:2px solid black;
         border-radius: 12px;
         margin-top: 20px;
@@ -274,7 +284,10 @@
         max-height: 300px;
         max-width: 641px;
     }
-    .payments{
+    .maintenance-history{
+        max-height: 50px;
+    }
+    .payments, .requests{
         border: 2px solid black;
         margin: 10px;
         height: 90%;
@@ -282,19 +295,19 @@
         border-radius: 12px;
         overflow-y:auto;
     }
-    .payment{
+    .payment,.request{
         display: flex;
         flex-direction: row;
         border-bottom: 1px solid black;
     }
-    .payment *{
+    .payment *,.request *{
         display: flex;
         flex: 33%;
         justify-content: center;
         align-items: center;
         text-decoration: none;
     }
-    .payment button{
+    .payment button,.request button{
         border-radius: 0px;
         border: 0px;
         border-left: 2px solid black;
