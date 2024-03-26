@@ -10,7 +10,7 @@ $result = $stmt->get_result();
 
 function render_listing($id, $image, $address, $postcode, $cost) {
     $code = <<<EOT
-    <a href="property?id=$id">
+    <a href="property.php?id=$id">
     <div class="property">
     <div class="lease-image">
     <img src="$image" alt="property">
