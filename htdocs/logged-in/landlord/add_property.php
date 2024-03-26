@@ -23,37 +23,37 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/private/banners/landlord.php");
         <ul>
             <li>
                 <label for="address">Address:</label>
-                <input type="text" class="form-control" id="address" required>
+                <input type="text" class="form-control" id="address" name="address" required>
             </li>
 
             <li>
                 <label for="postcode">Postcode:</label>
-                <input type="text" class="form-control" id="postcode" required>
+                <input type="text" class="form-control" id="postcode" name="postcode" required>
             </li>
 
             <li>
                 <label for="rpm">Rent per month:</label>
-                <input type="text" class="form-control" id="rpm" required>
+                <input type="text" class="form-control" id="rpm" name="rpm" required>
             </li>
 
             <li>
                 <label for="propertyType">Type of property:</label>
-                <input type="text" class="form-control" id="propType" required>
+                <input type="text" class="form-control" id="propType" name="propType" required>
             </li>
 
             <li>
                 <label for="numOfBedrooms">Number of bedrooms:</label>
-                <input type="number" name="form-control" id="numOfBedrooms">
+                <input type="number" name="form-control" id="numOfBedrooms" name="numOfBedrooms">
             </li>
 
             <li>
                 <label for="numOfBathrooms">Number of bathrooms:</label>
-                <input type="number" name="form-control" id="numOfBathrooms">
+                <input type="number" name="form-control" id="numOfBathrooms" name="numOfBathrooms">
             </li>
 
             <li>
-                <label for="descrpition">Descrption of property:</label>
-                <input type="text" class="form-control" id="descrpition" required>
+                <label for="description">Descrption of property:</label>
+                <input type="text" class="form-control" id="description" name="description" required>
             </li>
 
             <li>

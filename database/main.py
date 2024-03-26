@@ -41,7 +41,9 @@ class Property(Base):
     postcode = Column(String(16))
     rental_price = Column(DECIMAL)
     property_type = Column(String(256))
-    amenities = Column(Text)
+    num_bedrooms = Column(Integer)
+    num_bathrooms = Column(Integer)
+    description = Column(Text)
 
     landlord = relationship("User", back_populates="properties")
     images = relationship("PropertyImage", back_populates="property")
@@ -138,14 +140,14 @@ if (GEN_DATA) :
     conn.execute(insert(User).values(username = "emma taylor", password = "password5678", email="emma.taylor@example.org", type="landlord"))
 
     # properties
-    conn.execute(insert(Property).values(landlord_id="2", address="1 church lane", postcode="SW11 5AD", rental_price="1300", property_type="detached"))
-    conn.execute(insert(Property).values(landlord_id="2", address="24 Baker Street", postcode="NW1 6XE", rental_price="1500", property_type="semi-detached"))
-    conn.execute(insert(Property).values(landlord_id="2", address="76 High Street", postcode="SE1 1NH", rental_price="1200", property_type="flat"))
+    conn.execute(insert(Property).values(landlord_id="2", address="1 church lane", postcode="SW11 5AD", rental_price="1300", property_type="detached", num_bedrooms="3", num_bathrooms="2", description="Charming cottage with spacious rooms and a cozy atmosphere."))
+    conn.execute(insert(Property).values(landlord_id="2", address="24 Baker Street", postcode="NW1 6XE", rental_price="1500", property_type="semi-detached", num_bedrooms="2", num_bathrooms="1", description="Modern apartment with stylish interiors and a balcony overlooking the city."))
+    conn.execute(insert(Property).values(landlord_id="2", address="76 High Street", postcode="SE1 1NH", rental_price="1200", property_type="flat", num_bedrooms="4", num_bathrooms="3", description="Luxurious villa with a swimming pool, garden, and breathtaking views of the mountains."))
 
-    conn.execute(insert(Property).values(landlord_id="6", address="58 Victoria Road", postcode="SW1 1AD", rental_price="1400", property_type="detached"))
-    conn.execute(insert(Property).values(landlord_id="6", address="102 Hill Road", postcode="NW3 2AL", rental_price="1600", property_type="terrace"))
-    conn.execute(insert(Property).values(landlord_id="7", address="33 Queen Street", postcode="W1 8HL", rental_price="1350", property_type="flat"))
-    conn.execute(insert(Property).values(landlord_id="8", address="67 Park Avenue", postcode="SW2 4ER", rental_price="1550", property_type="semi-detached"))
+    conn.execute(insert(Property).values(landlord_id="6", address="58 Victoria Road", postcode="SW1 1AD", rental_price="1400", property_type="detached", num_bedrooms="1", num_bathrooms="1", description="Quaint studio flat in a historic building, perfect for a solo adventurer."))
+    conn.execute(insert(Property).values(landlord_id="6", address="102 Hill Road", postcode="NW3 2AL", rental_price="1600", property_type="terrace", num_bedrooms="5", num_bathrooms="4", description="Elegant mansion boasting grandeur architecture and lavish amenities."))
+    conn.execute(insert(Property).values(landlord_id="7", address="33 Queen Street", postcode="W1 8HL", rental_price="1350", property_type="flat", num_bedrooms="2", num_bathrooms="2", description="Cosy townhouse with a fireplace, ideal for enjoying chilly evenings."))
+    conn.execute(insert(Property).values(landlord_id="8", address="67 Park Avenue", postcode="SW2 4ER", rental_price="1550", property_type="semi-detached", num_bedrooms="3", num_bathrooms="2", description="Contemporary loft with an open floor plan and plenty of natural light."))
 
 
 conn.commit()
