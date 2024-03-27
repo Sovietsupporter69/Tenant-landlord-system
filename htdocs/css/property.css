@@ -1,0 +1,20 @@
+main > span {
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    margin: auto;
+    background-color: #949994;
+    align-content: center;
+    padding: 25px;
+    margin-top: 10%;
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    main { max-width: 90%; }
+}
+@media (min-width: 769px) {
+    main { max-width: 40%; }
+}
