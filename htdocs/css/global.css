@@ -234,7 +234,7 @@
         display: flex;
         flex: 95%
     }
-    .rent-due,.payment-history,.payment button,.maintenance-history,.request button{
+    .rent-due,.payment-history,.payment button,.maintenance-history,.request button,.maintenance-request{
         background-color: #FAF9F6;
     }
     .rent a, .maintenance a{
@@ -271,7 +271,7 @@
         padding: 10px;
         border-radius: 12px;
     }
-    .payment-history, .maintenance-history{
+    .payment-history, .maintenance-history,.maintenance-request{
         border:2px solid black;
         border-radius: 12px;
         margin-top: 20px;
@@ -283,6 +283,32 @@
         justify-content: center;
         max-height: 300px;
         max-width: 641px;
+    }
+    .maintenance-request{
+        max-height: 500px;
+    }
+    .maintenance-request form{
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0px 10px 0px;
+        justify-content: center;
+        align-content: center;
+        width:80%;
+        min-height: 300px;
+    }
+    .maintenance-request form *{
+        border-radius: 12px
+    }
+    .maintenance-request form input, .maintenance-request form textarea{
+        border: 2px black solid;
+        resize: none;
+        margin-bottom: 5px;
+    }
+    .maintenance-request form input{
+        padding:5px 0px 5px 0px;
+    }
+    .maintenance-request form button{
+        margin:5px 0px 5px 0px;
     }
     .maintenance-history{
         max-height: 50px;
