@@ -1,0 +1,4 @@
+CREATE USER tms@127.0.0.1 IDENTIFIED BY 'tms';
+CREATE DATABASE tms;
+GRANT ALL PRIVILEGES ON tms.* TO tms@127.0.0.1 IDENTIFIED BY 'tms';
+flush privileges;
