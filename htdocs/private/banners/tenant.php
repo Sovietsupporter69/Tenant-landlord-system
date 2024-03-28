@@ -15,8 +15,8 @@
         <div>
             <nav class="mainNav">
                 <menu>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">example text</a></li>
+                    <li><a href="/index.php">Home</a></li>
+                    <li><a href="/logged-in/tenant/maintenance-viewer.php">Maintenance</a></li>
                     <li><a href="">more example text</a></li>
                 </menu>
             </nav>
