@@ -2,9 +2,13 @@
     <header>
         <div class="bannerContainer">
             <div>
-                <a href="/">
+                <a href="/logged-in/tenant/index.php">
                     <span class="material-symbols-outlined">home</span>
                     <p>Home</p>
+                </a>
+                <a href="/API/auth/logout.php">
+                    <span class="material-symbols-outlined">logout</span>
+                    <p>Log out</p>
                 </a>
             </div>
 
@@ -17,7 +21,7 @@
                 <menu>
                     <li><a href="/logged-in/tenant/index.php">Home</a></li>
                     <li><a href="/logged-in/tenant/maintenance-viewer.php">Maintenance</a></li>
-                    <li><a href="">more example text</a></li>
+                    <!-- <li><a href="">more example text</a></li> -->
                 </menu>
             </nav>
         </div>
