@@ -1,4 +1,5 @@
 from sqlalchemy import create_engine
+import datetime
 
 GEN_DATA = True
 
@@ -149,5 +150,12 @@ if (GEN_DATA) :
     conn.execute(insert(Property).values(landlord_id="7", address="33 Queen Street", postcode="W1 8HL", rental_price="1350", property_type="flat", num_bedrooms="2", num_bathrooms="2", description="Cosy townhouse with a fireplace, ideal for enjoying chilly evenings."))
     conn.execute(insert(Property).values(landlord_id="8", address="67 Park Avenue", postcode="SW2 4ER", rental_price="1550", property_type="semi-detached", num_bedrooms="3", num_bathrooms="2", description="Contemporary loft with an open floor plan and plenty of natural light."))
 
-
+    # Lease
+    conn.execute(insert(Lease).values(property_id="4", tenant_id=2, start_date=datetime.date(2020, 2, 15), end_date=datetime.date(2025, 8, 15), digital_signature="---"))
+    conn.execute(insert(Lease).values(property_id="5", tenant_id=3, start_date=datetime.date(2020, 3, 20), end_date=datetime.date(2025, 9, 20), digital_signature="---"))
+    conn.execute(insert(Lease).values(property_id="6", tenant_id=1, start_date=datetime.date(2020, 4, 10), end_date=datetime.date(2025, 10, 10), digital_signature="---"))
+    conn.execute(insert(Lease).values(property_id="7", tenant_id=4, start_date=datetime.date(2020, 5, 5), end_date=datetime.date(2025, 11, 5), digital_signature="---"))
+    conn.execute(insert(Lease).values(property_id="1", tenant_id=2, start_date=datetime.date(2020, 6, 8), end_date=datetime.date(2025, 12, 8), digital_signature="---"))
+    conn.execute(insert(Lease).values(property_id="2", tenant_id=3, start_date=datetime.date(2020, 7, 12), end_date=datetime.date(2026, 1, 12), digital_signature="---"))
+    conn.execute(insert(Lease).values(property_id="3", tenant_id=4, start_date=datetime.date(2020, 8, 25), end_date=datetime.date(2026, 2, 25), digital_signature="---"))
 conn.commit()

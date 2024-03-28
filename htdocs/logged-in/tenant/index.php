@@ -1,5 +1,28 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/check_auth.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
+
+$stmt = $conn->prepare("SELECT lease.end_date, property.address, property.postcode FROM lease INNER JOIN property ON (lease.property_id = property.id) WHERE lease.tenant_id = ?;");
+$stmt->bind_param("s", $userid);
+$stmt->execute();
+$result = $stmt->get_result();
+
+function render_leased($end_date, $address, $postcode, $image) {
+    $code = <<<EOT
+    <div class="property">
+    <div class="lease-image">
+    <img src="$image" alt="property">
+    </div>
+    <div class="lease-info">
+    <h3>Property Name</h3>
+    <p>Address:$address</p>
+    <p>Postcode:$postcode</p>
+    <p>End date:$end_date</p>
+    </div>
+    </div>
+    EOT;
+    echo($code);
+}
 
 // these variables define properties about the page
 // and are managed automatically by the header
@@ -16,17 +39,17 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
     <section class="leased-properties">
         <h2>Leased Properties</h2>
         <a href="">
-            <div class="property">
-                <div class="lease-image">
-                    <img src="/assets/test-property.webp" alt="property">
-                </div>
-                <div class="lease-info">
-                    <h3>Property Name</h3>
-                    <p>Property:63 boston street</p>
-                    <p>Postcode:SH2 5RD</p>
-                    <p>Next Rent:13/04/23</p>
-                </div>
-            </div>
+        <?php
+        // images need fixing
+        if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+                render_leased($row['end_date'], $row['address'], $row['postcode'], '');
+            }
+        }
+        else {
+            echo("<p>You have no properties to display</p>");
+        }
+        ?> 
         </a>
     </section>
 </main>

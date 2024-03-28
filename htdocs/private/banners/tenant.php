@@ -3,7 +3,8 @@
         <div class="bannerContainer">
             <div>
                 <a href="/">
-                    <span class="material-symbols-outlined">home</span><p>Home</p>
+                    <span class="material-symbols-outlined">home</span>
+                    <p>Home</p>
                 </a>
             </div>
 
