@@ -97,8 +97,11 @@ class MaintenanceRequest(Base):
     id = Column(Integer, primary_key=True)
     property_id = Column(Integer, ForeignKey('property.id'))
     tenant_id = Column(Integer, ForeignKey('user.id'))
+    title = Column(String(128))
     description = Column(Text)
     urgency = Column(String(128))
+    open_date = Column(Date)
+    close_date = Column(Date)
 
     property = relationship("Property", back_populates="maintenance_requests")
     tenant = relationship("User", back_populates="maintenance_requests")
@@ -158,4 +161,10 @@ if (GEN_DATA) :
     conn.execute(insert(Lease).values(property_id="1", tenant_id=2, start_date=datetime.date(2020, 6, 8), end_date=datetime.date(2025, 12, 8), digital_signature="---"))
     conn.execute(insert(Lease).values(property_id="2", tenant_id=3, start_date=datetime.date(2020, 7, 12), end_date=datetime.date(2026, 1, 12), digital_signature="---"))
     conn.execute(insert(Lease).values(property_id="3", tenant_id=4, start_date=datetime.date(2020, 8, 25), end_date=datetime.date(2026, 2, 25), digital_signature="---"))
+
+    # Maintenance
+    conn.execute(insert(MaintenanceRequest).values(property_id="6", tenant_id=1, title="Broken toilet", description="My toilet has stopped flushing so I need it fixed ASAP", urgency="High", open_date=datetime.date(2022, 6, 30), close_date=datetime.date(2022, 7, 3)))
+    conn.execute(insert(MaintenanceRequest).values(property_id="6", tenant_id=1, title="Broken boiler", description="The boiler has stopped making hot water, found out when trying to take a shower", urgency="High", open_date=datetime.date(2023, 7, 6), close_date=datetime.date(2023, 7, 8)))
+    conn.execute(insert(MaintenanceRequest).values(property_id="6", tenant_id=1, title="Taps broken", description="The kitchen sink tap has stopped and it doesn't seem cloged so it might be something important", urgency="Medium", open_date=datetime.date(2023, 10, 13), close_date=datetime.date(2023, 10, 18)))
+    conn.execute(insert(MaintenanceRequest).values(property_id="6", tenant_id=1, title="Light went out", description="One of the lights in the living room has gone out and I cant reach it myself", urgency="Low", open_date=datetime.date(2024, 1, 15), close_date=datetime.date(2024, 1, 27)))
 conn.commit()
