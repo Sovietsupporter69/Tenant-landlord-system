@@ -13,7 +13,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 <main>
     <section class="search-box-properties">
     <h3>Search For properties</h3>
-        <form action="" class="home-search">
+        <form action="/property-search.php" class="home-search">
             <div class="top-search-property">
                 <div class="left-search-box-property">
                     <div class="input-top">
