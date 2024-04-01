@@ -135,7 +135,7 @@
         line-height: 1.5;
     }
 
-    .suggested-properties {
+    .suggested-properties,.selected-property {
         padding-top: 50px;
         padding-bottom: 50px;
         display: flex;
@@ -234,7 +234,7 @@
         display: flex;
         flex: 95%
     }
-    .rent-due,.payment-history,.payment button,.maintenance-history,.request button,.maintenance-request{
+    .rent-due,.payment-history,.payment button,.maintenance-history,.request button,.maintenance-request,.info-2,.property-details{
         background-color: #FAF9F6;
     }
     .rent a, .maintenance a{
@@ -338,6 +338,31 @@
         border: 0px;
         border-left: 2px solid black;
         flex:33%;
+    }
+    .info, .info-2,.property-details{
+        min-height: 90px;
+        width: 100%;
+        border-top: 1px black solid;
+        border-bottom: 1px black solid;
+        padding-left: 5px;
+    }
+    .selected-property{
+        max-width: 95%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .info-map iframe{
+        width: 75%;
+        border-radius: 12px;
+        border: 2px black solid;
+        margin: 20px 0px 50px 0px;
+    }
+    .info-map{
+        display: flex;
+        align-content: center;
+        justify-content: center;
     }
     @keyframes fadeIn {
         0% {

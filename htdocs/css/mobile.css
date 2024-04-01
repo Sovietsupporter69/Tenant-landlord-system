@@ -56,3 +56,6 @@
 .maintenance-img{
     max-width: 256px;
 }
+.info-map iframe{
+    height: 75%;
+}
