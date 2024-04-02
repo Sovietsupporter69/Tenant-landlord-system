@@ -45,7 +45,7 @@ define("title", "logged in");
 define("special_script", "img-scroller.js");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 ?>
 
 <main>
