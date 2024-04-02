@@ -8,7 +8,11 @@ define("special_script", "img-scroller.js");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 //require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
+
+// ideally we can make this random somehow
+echo("<script>var images = [\"03046e52512591ef0d9f3ebe21d3a57d\", \"36cda2ad1e1efc3c98a19ea8414459fe\", \"c61fda6acba701e46f9a94cb965e87fb\"]</script>");
+
 ?>
 
 <main>

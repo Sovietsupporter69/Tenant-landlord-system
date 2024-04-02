@@ -25,6 +25,18 @@ $description = $data["description"];
 
 $rental_price_weekly = ($rental_price * 12) / 52;
 
+// set images
+$stmt = $conn->prepare("SELECT image_path FROM property_image WHERE property_id = ?;");
+$stmt->bind_param("s", $property_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+echo("<script>var images = [");
+while ($path = mysqli_fetch_column($result)) { 
+    echo("\t\"$path\",");
+}
+echo("]</script>");
+
 // these variables define properties about the page
 // and are managed automatically by the header
 // delete them if you do not need them in your file
@@ -40,7 +52,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
     <section class="selected-property">
         <span class="material-symbols-outlined arrow" id="previous-img">arrow_back_ios</span>
         <div class="img-container">
-            <img src="assets/test-property.webp" alt="property" id="img-slider-img">
+            <img alt="property" id="img-slider-img">
         </div>
         <span class="material-symbols-outlined arrow" id="next-img">arrow_forward_ios</span>
     </section>
