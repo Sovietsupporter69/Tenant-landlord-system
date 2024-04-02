@@ -1,5 +1,30 @@
 <?php
 
+if (!isset($_GET['id'])) {
+    die("id is required");
+}
+$property_id = $_GET["id"];
+
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
+
+$stmt = $conn->prepare("SELECT * FROM property WHERE property.id = ?;");
+$stmt->bind_param("s", $property_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$data = mysqli_fetch_assoc($result);
+
+$id = $data["id"];
+$landlord_id = $data["landlord_id"];
+$address = $data["address"];
+$postcode = $data["postcode"];
+$rental_price = $data["rental_price"];
+$property_type = $data["property_type"];
+$num_bedrooms = $data["num_bedrooms"];
+$num_bathrooms = $data["num_bathrooms"];
+$description = $data["description"];
+
+$rental_price_weekly = ($rental_price * 12) / 52;
+
 // these variables define properties about the page
 // and are managed automatically by the header
 // delete them if you do not need them in your file
@@ -20,21 +45,23 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
         <span class="material-symbols-outlined arrow" id="next-img">arrow_forward_ios</span>
     </section>
     <section class="property-info">
-        <div class="property-details">
-            <h2>£200/Month(£50/Week)</h2>
-            <p>Apartment</p>
-            <p>12 Denver Road, SU1 4RT</p>
+        <div class="info">
+            <h2><?php echo("£$rental_price/Month"); ?></h2>
+            <p><?php echo("£$rental_price_weekly/Week"); ?></p>
         </div>
         <div class="info">
-            <p>Sample info about property e.g council tax bracket</p>
-        </div>
-        <div class="info-2">
-            <p>info about rent agreement e.g length of contract</p>
+            <p><?php echo("Address:  $address"); ?></p>
+            <p><?php echo("Postcode: $postcode"); ?></p>
         </div>
         <div class="info">
-            <p>Description of property and features</p>
+            <p><?php echo("Type: $property_type"); ?></p>
+            <p><?php echo("Bedrooms: $num_bedrooms"); ?></p>
+            <p><?php echo("bathrooms: $num_bathrooms"); ?></p>
         </div>
-        <div class="info-map">
+        <div class="info">
+            <p><?php echo("$description"); ?></p>
+        </div>
+        <div class="info info-map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1281.3778124461187!2d-1.4693504108519726!3d53.37683066503238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48798283ed55ede5%3A0xeafd77a50b7ce297!2sSheffield%20Hallam%20University!5e0!3m2!1sen!2suk!4v1711983856024!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>

@@ -234,7 +234,7 @@
         display: flex;
         flex: 95%
     }
-    .rent-due,.payment-history,.payment button,.maintenance-history,.request button,.maintenance-request,.info-2,.property-details{
+    .rent-due,.payment-history,.payment button,.maintenance-history,.request button,.maintenance-request,.property-details{
         background-color: #FAF9F6;
     }
     .rent a, .maintenance a{
@@ -339,13 +339,17 @@
         border-left: 2px solid black;
         flex:33%;
     }
-    .info, .info-2,.property-details{
+    .info, .property-details{
         min-height: 90px;
         width: 100%;
         border-top: 1px black solid;
         border-bottom: 1px black solid;
         padding-left: 5px;
     }
+    .info:nth-child(odd) {
+        background-color: #FAF9F6;
+    }
+
     .selected-property{
         max-width: 95%;
         display: flex;
