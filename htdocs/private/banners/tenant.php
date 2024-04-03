@@ -21,7 +21,7 @@
                 <menu>
                     <li><a href="/logged-in/tenant/index.php">Home</a></li>
                     <li><a href="/logged-in/tenant/maintenance-viewer.php">Maintenance</a></li>
-                    <!-- <li><a href="">more example text</a></li> -->
+                    <li><a href="/logged-in/tenant/account.php">Account Settings</a></li>
                 </menu>
             </nav>
         </div>
