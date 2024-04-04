@@ -234,7 +234,7 @@
         display: flex;
         flex: 95%
     }
-    .rent-due,.payment-history,.payment button,.maintenance-history,.request button,.maintenance-request,.property-details{
+    .rent-due,.payment-history,.payment button,.maintenance-history,.request button,.maintenance-request,.property-details,.lease-agreement{
         background-color: #FAF9F6;
     }
     .rent a, .maintenance a{
@@ -246,12 +246,15 @@
         justify-content:center;
         flex-direction: column;
     }
-    .maintenance-img{
+    .maintenance-img,.selected-lease-img{
         width: 80%;
         border-radius: 12px;
         margin-bottom: 20px;
     }
-    .maintenance-img img{
+    .selected-lease-img{
+        margin-bottom: 0px;
+    }
+    .maintenance-img img,.selected-lease-img img{
         width: 100%;
         height: 100%;
         border-radius: 12px;
@@ -271,7 +274,7 @@
         padding: 10px;
         border-radius: 12px;
     }
-    .payment-history, .maintenance-history,.maintenance-request{
+    .payment-history, .maintenance-history,.maintenance-request,.lease-agreement{
         border:2px solid black;
         border-radius: 12px;
         margin-top: 20px;
@@ -283,6 +286,23 @@
         justify-content: center;
         max-height: 300px;
         max-width: 641px;
+    }
+    .lease-agreement{
+        min-height: 400px;
+    }
+    .apply{
+        width: 80%;
+        max-width: 300px;
+        margin: 10px 0px 50px 0px;
+    }
+    .apply button{
+        width: 100%;
+        max-width: 300px;
+    }
+    .lease-agreement embed{
+        width: 100%;
+        height: 400px;
+        border-radius: 12px;
     }
     .maintenance-request{
         max-height: 500px;
@@ -351,7 +371,7 @@
     }
 
     .selected-property{
-        max-width: 95%;
+        max-width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
