@@ -22,16 +22,21 @@ $query = "%$query%";
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
 
 $stmt = $conn->prepare(<<<SQL
-SELECT * FROM tms.property WHERE 
-    ? < rental_price and 
-    ? > rental_price and 
-    ? < num_bedrooms and 
-    ? > num_bedrooms and 
-    description like ? and
-    id > ?
-    ORDER BY id
-    LIMIT $page_size
-    ;
+
+SELECT p.*, MAX(pi.image_path) AS image_path
+FROM tms.property p 
+LEFT JOIN tms.property_image pi ON p.id = pi.property_id
+WHERE 
+    ? < p.rental_price and 
+    ? > p.rental_price and 
+    ? < p.num_bedrooms and 
+    ? > p.num_bedrooms and 
+    p.description LIKE ? and
+    p.id > ?
+GROUP BY p.id
+ORDER BY p.id
+LIMIT $page_size;
+
 SQL);
 
 $stmt->bind_param("iiiisi", $min_price, $max_price, $min_bedrooms, $max_bedrooms, $query, $cursor);

@@ -491,4 +491,8 @@
         text-align: center;
         display: block;
     }
+
+    #scroller {
+        height: 200px;
+    }
 }

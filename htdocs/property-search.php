@@ -10,6 +10,8 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 //require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 ?>
+<script src=/js/search.js defer></script>
+
 <main>
     <section class="search-box-properties">
     <h3>Search For properties</h3>
@@ -58,21 +60,10 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
             <input class ="property-search" id ="property-search" type="submit" value="search">
         </form>
     </section>
-    <section class="leased-properties">
-        <a href="">
-            <div class="property">
-                <div class="lease-image">
-                    <img src="/assets/test-property.webp" alt="property">
-                </div>
-                <div class="lease-info">
-                    <h3>Property Name</h3>
-                    <p>Property:63 boston street</p>
-                    <p>Postcode:SH2 5RD</p>
-                    <p>Next Rent:13/04/23</p>
-                </div>
-            </div>
-        </a>
+    <section class="leased-properties" id="listings-container">
+        <!-- results go here -->
     </section>
+    <div id=scroller></div>
 </main>
 
 <?php
