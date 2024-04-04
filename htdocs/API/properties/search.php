@@ -32,10 +32,10 @@ SELECT p.*, MAX(pi.image_path) AS image_path
 FROM tms.property p 
 LEFT JOIN tms.property_image pi ON p.id = pi.property_id
 WHERE 
-    ? < p.rental_price and 
-    ? > p.rental_price and 
-    ? < p.num_bedrooms and 
-    ? > p.num_bedrooms and 
+    ? <= p.rental_price and 
+    ? >= p.rental_price and 
+    ? <= p.num_bedrooms and 
+    ? >= p.num_bedrooms and 
     p.description LIKE ? and
     p.id > ?
 GROUP BY p.id
