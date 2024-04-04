@@ -4,15 +4,16 @@
 // params:
 //  query: string
 
+$page_size = 3;
 
 // validate arguments
-
 
 $query = $_GET['query'] ?? "";
 $min_price = $_GET['min-price'] ?? 0;
 $max_price = $_GET['max-price'] ?? PHP_INT_MAX;
 $min_bedrooms = $_GET['min-bedrooms'] ?? 0;
 $max_bedrooms = $_GET['max-bedrooms'] ?? PHP_INT_MAX;
+$cursor = $_GET['cursor'] ?? 0;
 
 // select from database based on some query logic
 
@@ -20,16 +21,34 @@ $query = "%$query%";
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
 
-$stmt = $conn->prepare("SELECT * FROM tms.property WHERE ? < rental_price and ? > rental_price and ? < num_bedrooms and ? > num_bedrooms and description like ?;");
-$stmt->bind_param("iiiis", $min_price, $max_price, $min_bedrooms, $max_bedrooms, $query);
+$stmt = $conn->prepare(<<<SQL
+SELECT * FROM tms.property WHERE 
+    ? < rental_price and 
+    ? > rental_price and 
+    ? < num_bedrooms and 
+    ? > num_bedrooms and 
+    description like ? and
+    id > ?
+    ORDER BY id
+    LIMIT $page_size
+    ;
+SQL);
+
+$stmt->bind_param("iiiisi", $min_price, $max_price, $min_bedrooms, $max_bedrooms, $query, $cursor);
 $stmt->execute();
 $result = $stmt->get_result();
 
 $arr = array();
 while($row = $result->fetch_assoc()) {
     $arr[] = $row;
+    $id=$row['id'];
 }
 
-echo json_encode($arr);
+$json = array(
+    "listings"=>$arr,
+    "cursor"=>$id
+);
+
+echo json_encode($json);
 
 ?>
