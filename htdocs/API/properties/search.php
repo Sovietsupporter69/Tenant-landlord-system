@@ -15,6 +15,11 @@ $min_bedrooms = $_GET['min-bedrooms'] ?? 0;
 $max_bedrooms = $_GET['max-bedrooms'] ?? PHP_INT_MAX;
 $cursor = $_GET['cursor'] ?? 0;
 
+$min_price = ($min_price !== '') ? $min_price : 0;
+$max_price = ($max_price !== '') ? $max_price : PHP_INT_MAX;
+$min_bedrooms = ($min_bedrooms !== '') ? $min_bedrooms : 0;
+$max_bedrooms = ($max_bedrooms !== '') ? $max_bedrooms : PHP_INT_MAX;
+
 // select from database based on some query logic
 
 $query = "%$query%";
