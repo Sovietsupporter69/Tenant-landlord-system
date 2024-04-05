@@ -5,8 +5,8 @@
 $original_path = $_SERVER['REQUEST_URI'];
 $file_name = basename($original_path);
 
-$safe_pattern = '/^[a-zA-Z0-9_\-\.]+$/';
-if (preg_match($safe_pattern, $file_name)) {
+$safe_pattern = '/^[a-zA-Z0-9]+$/';
+if (preg_match($safe_pattern, $file_name) and (strlen($file_name) == 32)) {
     try {
         $path = $_SERVER["DOCUMENT_ROOT"]."/../images/$file_name.png";
         $file_contents = file_get_contents($path);
