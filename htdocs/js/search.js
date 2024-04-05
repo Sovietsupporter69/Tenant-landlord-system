@@ -23,6 +23,7 @@ async function callback() {
         render(
             property['id'],
             property['image_path'],
+            property['description'],
             property['address'],
             property['postcode'],
             property['rental_price']
@@ -49,7 +50,7 @@ async function fet() {
 
 }
 
-function render(id, image, address, postcode, rent) {
+function render(id, image, description, address, postcode, rent) {
 
     var anchor = document.createElement("a");
     anchor.href = `/property-viewer.php?id=${id}`;
@@ -61,9 +62,9 @@ function render(id, image, address, postcode, rent) {
                 <img src="/images/${image}" alt="property">
             </div>
             <div class="lease-info">
-                <h3>${address}</h3>
-                <p>${postcode}</p>
-                <p>${rent}</p>
+                <h3>${description}</h3>
+                <p>${address} ${postcode}</p>
+                <p>£${rent}/month</p>
             </div>
         </div>
     `;

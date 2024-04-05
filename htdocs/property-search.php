@@ -20,13 +20,13 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
                 <div class="left-search-box-property">
                     <div class="input-top">
                         <label for="location">location</label>
-                        <input type="text" name="location" id="location">
+                        <input type="text" name="location", value="<?php echo($_GET['location'] ?? '')?>", id="location">
                     </div>
                 </div>
                 <div class="right-search-box-property">
                     <div class="input-top">
                         <label for="range">Range</label>
-                        <select name="range" id="range">
+                        <select name="range", value="<?php echo($_GET['range'] ?? '')?>", id="range">
                         <option value="5">5 miles</option>
                         <option value="10">10 miles</option>
                         <option value="15">15 miles</option>
@@ -41,15 +41,15 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
                 <div class="hidden-search" id="hidden-search">
                     <div class="input-top">
                         <label for="min-price">Min Price</label>
-                        <input type="number" name="min-price" id="min-price">
+                        <input type="number" name="min-price", value="<?php echo($_GET['min-price'] ?? '')?>", id="min-price">
                     </div>
                     <div class="input-top">
                         <label for="max-price">Max Price</label>
-                        <input type="number" name="max-price" id="max-price">
+                        <input type="number" name="max-price", value="<?php echo($_GET['max-price'] ?? '')?>", id="max-price">
                     </div>
                     <div class="input-top">
                         <label for="range">Property Type</label>
-                        <select name="property-type" id="property-type">
+                        <select name="property-type", value="<?php echo($_GET['property-type'] ?? '')?>", id="property-type">
                         <option value="house">Houses</option>
                         <option value="apartment">Apartments</option>
                         <option value="bungalow">Bungalows</option>
