@@ -240,7 +240,7 @@
     .rent a, .maintenance a{
         text-decoration: 0px;
     }
-    .rent,.maintenance{
+    .rent,.maintenance,.payment-details{
         display: flex;
         align-items: center;
         justify-content:center;
