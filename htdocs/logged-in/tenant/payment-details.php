@@ -14,8 +14,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
 
 <main>
     <section class="payment-details">
-        <div class="payment-history">
-            
+        <div class="payment-detail-contain">
                 <div class="payment-summary">
                     <p>£400</p>
                     <p>14/05/23</p>
