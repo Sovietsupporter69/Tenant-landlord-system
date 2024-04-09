@@ -327,12 +327,12 @@
     .maintenance-request form *{
         border-radius: 12px
     }
-    .maintenance-request form input, .maintenance-request form textarea{
+    .maintenance-request form input, .maintenance-request form textarea,.maintenance-request form select{
         border: 2px black solid;
         resize: none;
         margin-bottom: 5px;
     }
-    .maintenance-request form input{
+    .maintenance-request form input,.maintenance-request form select{
         padding:5px 0px 5px 0px;
     }
     .maintenance-request form button{

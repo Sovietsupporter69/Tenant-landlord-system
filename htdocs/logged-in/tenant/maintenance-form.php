@@ -21,6 +21,17 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
                 <input type="date" name="date" id="date" required>
                 <label for="title">Title:</label>
                 <input type="text" name="title" id="title" required>
+                <label for="property">Property:</label>
+                <select name="property" id="property">
+                    <option value=""></option>
+                </select>
+                <label for="urgency">Urgency:</label>
+                <select name="urgency" id="urgency">
+                    <option value="Life Threatening">Life Threatening</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
                 <label for="details">Details:</label>
                 <textarea name="details" id="details" cols="10" rows="10" required></textarea>
                 <div class="centre">
