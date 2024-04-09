@@ -234,19 +234,19 @@
         display: flex;
         flex: 95%
     }
-    .rent-due,.payment-history,.payment button,.maintenance-history,.request button,.maintenance-request,.property-details,.lease-agreement,.payment-detail-contain{
+    .rent-due,.payment-history,.payment button,.maintenance-history,.request button,.maintenance-request,.property-details,.lease-agreement,.payment-detail-contain,.maintenance-detail-contain{
         background-color: #FAF9F6;
     }
     .rent a, .maintenance a{
         text-decoration: 0px;
     }
-    .rent,.maintenance,.payment-details{
+    .rent,.maintenance,.payment-details,.maintenance-details{
         display: flex;
         align-items: center;
         justify-content:center;
         flex-direction: column;
     }
-    .payment-details{
+    .payment-details,.maintenance-details{
         height: 100%;
         margin-top: 100px;
     }
@@ -278,7 +278,7 @@
         padding: 10px;
         border-radius: 12px;
     }
-    .payment-history, .maintenance-history,.maintenance-request,.lease-agreement,.payment-detail-contain{
+    .payment-history, .maintenance-history,.maintenance-request,.lease-agreement,.payment-detail-contain,.maintenance-detail-contain{
         border:2px solid black;
         border-radius: 12px;
         margin-top: 20px;
@@ -291,7 +291,7 @@
         max-height: 300px;
         max-width: 641px;
     }
-    .payment-detail-contain{
+    .payment-detail-contain,.maintenance-detail-contain{
         min-height: 300px;
         max-height: 600px;
     }
@@ -396,7 +396,8 @@
         align-content: center;
         justify-content: center;
     }
-    .payment-summary{
+    .payment-summary,.maintenance-summary{
+        flex: 10%;
         display: flex;
         flex-direction: row;
         width: 100%;
@@ -406,12 +407,17 @@
         padding-right: 20px;
 
     }
-    .payees{
+    .payment-summary p, .maintenance-summary p{
+        margin-bottom: 0px;
+    }
+    .payees,.maintenance-description{
+        flex: 45%;
         width: 100%;
         border-bottom: black solid 1px;
         padding-left: 20px;
     }
-    .delivered{
+    .delivered,.maintenance-status{
+        flex: 45%;
         width: 100%;
         padding-left: 20px;
     }
