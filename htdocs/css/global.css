@@ -240,7 +240,7 @@
     .rent a, .maintenance a{
         text-decoration: 0px;
     }
-    .rent,.maintenance,.payment-details,.maintenance-details{
+    .rent,.maintenance,.payment-details,.maintenance-details,.add-image{
         display: flex;
         align-items: center;
         justify-content:center;
@@ -434,6 +434,14 @@
     }
     .maintenance a{
         width: 100px;
+    }
+    .img-upload-frm{
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .img-upload-frm *{
+        margin-bottom: 5px;
     }
     @keyframes fadeIn {
         0% {
