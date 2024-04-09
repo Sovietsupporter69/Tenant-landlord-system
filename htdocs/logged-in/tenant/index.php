@@ -40,7 +40,6 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
         <h2>Leased Properties</h2>
         <a href="">
         <?php
-        // images need fixing
         if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
                 render_leased($row['end_date'], $row['address'], $row['postcode'], $row['image_path']);
