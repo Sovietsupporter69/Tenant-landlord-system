@@ -15,6 +15,45 @@ echo("<script>var images = [\"03046e52512591ef0d9f3ebe21d3a57d\", \"36cda2ad1e1e
 
 ?>
 
+<div class="alert">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong><u>Reminder</u></strong><br>
+    Your next rent payment is due on 20/05/2024.
+</div>
+
+<div class="alert2">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong><u>Important Reminder</u></strong><br>
+    Your rent is due soon.<br>
+    Please make sure your rent is paid as soon as possible.
+</div>
+
+<div class="alert3">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong><u>Urgent</u></strong><br>
+    Oops, you have forgotten to pay your rent.<br>
+    It was due on 30/03/2024.
+</div>
+
+<div class="lease">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong><u>Reminder</u></strong><br>
+    Your lease will expire on 18/04/2024.
+</div>
+
+<div class="lease2">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong><u>Important Reminder</u></strong><br>
+    Your lease will expire soon.<br>
+    Please make sure you renew it as soon as possible.
+</div>
+
+<div class="lease3">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <strong><u>Urgent</u></strong><br>
+    Your lease has expired. Please renew it now!!
+</div>
+
 <main>
     <section class="welcome-banner">
         <h1>Tenant Landlord System</h1>
