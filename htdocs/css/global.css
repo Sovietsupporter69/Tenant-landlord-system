@@ -421,6 +421,15 @@
         width: 100%;
         padding-left: 20px;
     }
+    .payment-options{
+        width: 100px;
+    }
+    .maintenance a button{
+        width: 100%;
+    }
+    .maintenance a{
+        width: 100px;
+    }
     @keyframes fadeIn {
         0% {
             opacity: 0;

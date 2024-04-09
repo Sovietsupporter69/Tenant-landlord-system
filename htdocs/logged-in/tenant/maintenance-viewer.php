@@ -36,7 +36,9 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
         <div class="maintenance-img">
             <img src="/assets/test-property.webp" alt="">
         </div>
-        <button>Request</button>
+        <a href="maintenance-form.php">
+            <button>Request</button>
+        </a>
         <div class="maintenance-history">
             <div class="requests">
                 <a href="">
