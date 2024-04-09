@@ -25,6 +25,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
                 </select>
                 <label for="urgency">Urgency:</label>
                 <select name="urgency" id="urgency">
+                    <option value="" style="display: none;"></option>
                     <option value="Life Threatening">Life Threatening</option>
                     <option value="High">High</option>
                     <option value="Medium">Medium</option>
