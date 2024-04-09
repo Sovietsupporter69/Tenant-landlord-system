@@ -135,7 +135,7 @@
         line-height: 1.5;
     }
 
-    .suggested-properties {
+    .suggested-properties,.selected-property {
         padding-top: 50px;
         padding-bottom: 50px;
         display: flex;
@@ -234,24 +234,31 @@
         display: flex;
         flex: 95%
     }
-    .rent-due,.payment-history,.payment button,.maintenance-history,.request button{
+    .rent-due,.payment-history,.payment button,.maintenance-history,.request button,.maintenance-request,.property-details,.lease-agreement,.payment-detail-contain,.maintenance-detail-contain{
         background-color: #FAF9F6;
     }
     .rent a, .maintenance a{
         text-decoration: 0px;
     }
-    .rent,.maintenance{
+    .rent,.maintenance,.payment-details,.maintenance-details{
         display: flex;
         align-items: center;
         justify-content:center;
         flex-direction: column;
     }
-    .maintenance-img{
+    .payment-details,.maintenance-details{
+        height: 100%;
+        margin-top: 100px;
+    }
+    .maintenance-img,.selected-lease-img{
         width: 80%;
         border-radius: 12px;
         margin-bottom: 20px;
     }
-    .maintenance-img img{
+    .selected-lease-img{
+        margin-bottom: 0px;
+    }
+    .maintenance-img img,.selected-lease-img img{
         width: 100%;
         height: 100%;
         border-radius: 12px;
@@ -271,7 +278,7 @@
         padding: 10px;
         border-radius: 12px;
     }
-    .payment-history, .maintenance-history{
+    .payment-history, .maintenance-history,.maintenance-request,.lease-agreement,.payment-detail-contain,.maintenance-detail-contain{
         border:2px solid black;
         border-radius: 12px;
         margin-top: 20px;
@@ -283,6 +290,53 @@
         justify-content: center;
         max-height: 300px;
         max-width: 641px;
+    }
+    .payment-detail-contain,.maintenance-detail-contain{
+        min-height: 300px;
+        max-height: 600px;
+    }
+    .lease-agreement{
+        min-height: 400px;
+    }
+    .apply{
+        width: 80%;
+        max-width: 300px;
+        margin: 10px 0px 50px 0px;
+    }
+    .apply button{
+        width: 100%;
+        max-width: 300px;
+    }
+    .lease-agreement embed{
+        width: 100%;
+        height: 400px;
+        border-radius: 12px;
+    }
+    .maintenance-request{
+        max-height: 500px;
+    }
+    .maintenance-request form{
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0px 10px 0px;
+        justify-content: center;
+        align-content: center;
+        width:80%;
+        min-height: 300px;
+    }
+    .maintenance-request form *{
+        border-radius: 12px
+    }
+    .maintenance-request form input, .maintenance-request form textarea,.maintenance-request form select{
+        border: 2px black solid;
+        resize: none;
+        margin-bottom: 5px;
+    }
+    .maintenance-request form input,.maintenance-request form select{
+        padding:5px 0px 5px 0px;
+    }
+    .maintenance-request form button{
+        margin:5px 0px 5px 0px;
     }
     .maintenance-history{
         max-height: 50px;
@@ -312,6 +366,74 @@
         border: 0px;
         border-left: 2px solid black;
         flex:33%;
+    }
+    .info, .property-details{
+        min-height: 90px;
+        width: 100%;
+        border-top: 1px black solid;
+        border-bottom: 1px black solid;
+        padding-left: 5px;
+    }
+    .info:nth-child(odd) {
+        background-color: #FAF9F6;
+    }
+
+    .selected-property{
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .info-map iframe{
+        width: 75%;
+        border-radius: 12px;
+        border: 2px black solid;
+        margin: 20px 0px 50px 0px;
+    }
+    .info-map{
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .payment-summary,.maintenance-summary{
+        flex: 10%;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 1px solid black;
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+    .payment-summary p, .maintenance-summary p{
+        margin-bottom: 0px;
+    }
+    .payees,.maintenance-description{
+        flex: 45%;
+        width: 100%;
+        border-bottom: black solid 1px;
+        padding-left: 20px;
+    }
+    .delivered,.maintenance-status{
+        flex: 45%;
+        width: 100%;
+        padding-left: 20px;
+    }
+    .payment-option{
+        width: 200px;
+        
+    }
+    .payment-option img{
+        width: 100%;
+        border-radius: 12px;
+    }
+    .maintenance a button{
+        width: 100%;
+    }
+    .maintenance a{
+        width: 100px;
     }
     @keyframes fadeIn {
         0% {
@@ -415,5 +537,9 @@
     .centre {
         text-align: center;
         display: block;
+    }
+
+    #scroller {
+        height: 200px;
     }
 }

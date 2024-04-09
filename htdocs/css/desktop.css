@@ -72,6 +72,9 @@
     text-align: center;
     padding-left: 50px;
 }
-.maintenance-img{
+.maintenance-img,.selected-lease-img{
     max-width: 350px;
+}
+.info-map iframe{
+    height: 300px;
 }

@@ -15,7 +15,7 @@ engine = create_engine(DB_URL, echo=True)
 conn = engine.connect()
 
 from sqlalchemy.orm import declarative_base, relationship
-from sqlalchemy import Integer, String, Enum, CHAR, Column, ForeignKey, DECIMAL, Date, Text, DateTime
+from sqlalchemy import Integer, String, Enum, CHAR, Column, ForeignKey, DECIMAL, Date, Text, DateTime, LargeBinary
 
 Base = declarative_base()
 
@@ -36,7 +36,7 @@ class User(Base):
 
 class Property(Base):
     __tablename__ = 'property'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     landlord_id = Column(Integer, ForeignKey('user.id'))
     address = Column(String(256))
     postcode = Column(String(16))
@@ -54,15 +54,15 @@ class Property(Base):
 
 class PropertyImage(Base):
     __tablename__ = 'property_image'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     property_id = Column(Integer, ForeignKey('property.id'))
-    image_path = Column(String(256))
+    image_path = Column(String(64))
 
     property = relationship("Property", back_populates="images")
 
 class Document(Base):
     __tablename__ = 'document'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     property_id = Column(Integer, ForeignKey('property.id'))
     document_type = Column(String(256))
     file_path = Column(String(1024))
@@ -71,7 +71,7 @@ class Document(Base):
 
 class Lease(Base):
     __tablename__ = 'lease'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     property_id = Column(Integer, ForeignKey('property.id'))
     tenant_id = Column(Integer, ForeignKey('user.id'))
     start_date = Column(Date)
@@ -84,7 +84,7 @@ class Lease(Base):
 
 class Payment(Base):
     __tablename__ = 'payment'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     lease_id = Column(Integer, ForeignKey('lease.id'))
     amount = Column(DECIMAL)
     payment_date = Column(Date)
@@ -94,18 +94,21 @@ class Payment(Base):
 
 class MaintenanceRequest(Base):
     __tablename__ = 'maintenance_request'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     property_id = Column(Integer, ForeignKey('property.id'))
     tenant_id = Column(Integer, ForeignKey('user.id'))
+    title = Column(String(128))
     description = Column(Text)
     urgency = Column(String(128))
+    open_date = Column(Date)
+    close_date = Column(Date)
 
     property = relationship("Property", back_populates="maintenance_requests")
     tenant = relationship("User", back_populates="maintenance_requests")
 
 class Message(Base):
     __tablename__ = 'message'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     sender_id = Column(Integer, ForeignKey('user.id'))
     receiver_id = Column(Integer, ForeignKey('user.id'))
     content = Column(Text)
@@ -116,7 +119,7 @@ class Message(Base):
 
 class Report(Base):
     __tablename__ = 'report'
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     landlord_id = Column(Integer, ForeignKey('user.id'))
     report_type = Column(String(128))
     generated_at = Column(DateTime)
@@ -150,6 +153,29 @@ if (GEN_DATA) :
     conn.execute(insert(Property).values(landlord_id="7", address="33 Queen Street", postcode="W1 8HL", rental_price="1350", property_type="flat", num_bedrooms="2", num_bathrooms="2", description="Cosy townhouse with a fireplace, ideal for enjoying chilly evenings."))
     conn.execute(insert(Property).values(landlord_id="8", address="67 Park Avenue", postcode="SW2 4ER", rental_price="1550", property_type="semi-detached", num_bedrooms="3", num_bathrooms="2", description="Contemporary loft with an open floor plan and plenty of natural light."))
 
+    # property images
+    conn.execute(insert(PropertyImage).values(property_id=1, image_path="03046e52512591ef0d9f3ebe21d3a57d"))
+    conn.execute(insert(PropertyImage).values(property_id=1, image_path="73be7f23c8c9ce5d1b58fcdde33fcf15"))
+    conn.execute(insert(PropertyImage).values(property_id=1, image_path="8b3d0b3a9dc7027cc4b926ea91edfa29"))
+    conn.execute(insert(PropertyImage).values(property_id=2, image_path="18cead07d1b53ed74a2262d8f048410a"))
+    conn.execute(insert(PropertyImage).values(property_id=2, image_path="f1f88913a7d278fb6bf754afa49feb96"))
+    conn.execute(insert(PropertyImage).values(property_id=2, image_path="c638ac502c39bdc0d967824a07959db3"))
+    conn.execute(insert(PropertyImage).values(property_id=3, image_path="36cda2ad1e1efc3c98a19ea8414459fe"))
+    conn.execute(insert(PropertyImage).values(property_id=3, image_path="60fa48b8c9082a548ab78cbe05e4f759"))
+    conn.execute(insert(PropertyImage).values(property_id=3, image_path="760d5048e3bf42f074f97b78394f619d"))
+    conn.execute(insert(PropertyImage).values(property_id=4, image_path="dc0ebe44892a0a87112809dcaa220025"))
+    conn.execute(insert(PropertyImage).values(property_id=4, image_path="75e81f2163a46d8cf42f3fa43aaef3fc"))
+    conn.execute(insert(PropertyImage).values(property_id=4, image_path="11630caf76568fd0af10ccd08c0f6139"))
+    conn.execute(insert(PropertyImage).values(property_id=5, image_path="481f6a2c3c56e795074bb99dc23f634f"))
+    conn.execute(insert(PropertyImage).values(property_id=5, image_path="329ee67dd0efd29f1086ee3e44f806ff"))
+    conn.execute(insert(PropertyImage).values(property_id=5, image_path="4a1971f1ac323dc2f2567e189600e64a"))
+    conn.execute(insert(PropertyImage).values(property_id=6, image_path="6d78459c8ed078b7e1df397915153dc9"))
+    conn.execute(insert(PropertyImage).values(property_id=6, image_path="8e8cc0b86603cd4534f2aa202c1176d7"))
+    conn.execute(insert(PropertyImage).values(property_id=6, image_path="c61fda6acba701e46f9a94cb965e87fb"))
+    conn.execute(insert(PropertyImage).values(property_id=7, image_path="51d271bca6b084c10bb4c0b0278d5f05"))
+    conn.execute(insert(PropertyImage).values(property_id=7, image_path="af36ef6585c48eefe651117710f5cca5"))
+    conn.execute(insert(PropertyImage).values(property_id=7, image_path="4d4bfa5e009d0a0d47d02a20b13c282b"))
+
     # Lease
     conn.execute(insert(Lease).values(property_id="4", tenant_id=2, start_date=datetime.date(2020, 2, 15), end_date=datetime.date(2025, 8, 15), digital_signature="---"))
     conn.execute(insert(Lease).values(property_id="5", tenant_id=3, start_date=datetime.date(2020, 3, 20), end_date=datetime.date(2025, 9, 20), digital_signature="---"))
@@ -158,4 +184,11 @@ if (GEN_DATA) :
     conn.execute(insert(Lease).values(property_id="1", tenant_id=2, start_date=datetime.date(2020, 6, 8), end_date=datetime.date(2025, 12, 8), digital_signature="---"))
     conn.execute(insert(Lease).values(property_id="2", tenant_id=3, start_date=datetime.date(2020, 7, 12), end_date=datetime.date(2026, 1, 12), digital_signature="---"))
     conn.execute(insert(Lease).values(property_id="3", tenant_id=4, start_date=datetime.date(2020, 8, 25), end_date=datetime.date(2026, 2, 25), digital_signature="---"))
+
+    # Maintenance
+    conn.execute(insert(MaintenanceRequest).values(property_id="6", tenant_id=1, title="Broken toilet", description="My toilet has stopped flushing so I need it fixed ASAP", urgency="High", open_date=datetime.date(2022, 6, 30), close_date=datetime.date(2022, 7, 3)))
+    conn.execute(insert(MaintenanceRequest).values(property_id="6", tenant_id=1, title="Broken boiler", description="The boiler has stopped making hot water, found out when trying to take a shower", urgency="High", open_date=datetime.date(2023, 7, 6), close_date=datetime.date(2023, 7, 8)))
+    conn.execute(insert(MaintenanceRequest).values(property_id="6", tenant_id=1, title="Taps broken", description="The kitchen sink tap has stopped and it doesn't seem cloged so it might be something important", urgency="Medium", open_date=datetime.date(2023, 10, 13), close_date=datetime.date(2023, 10, 18)))
+    conn.execute(insert(MaintenanceRequest).values(property_id="6", tenant_id=1, title="Light went out", description="One of the lights in the living room has gone out and I cant reach it myself", urgency="Low", open_date=datetime.date(2024, 1, 15), close_date=datetime.date(2024, 1, 27)))
+
 conn.commit()

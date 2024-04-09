@@ -10,21 +10,23 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 //require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
 ?>
+<script src=/js/search.js defer></script>
+
 <main>
     <section class="search-box-properties">
     <h3>Search For properties</h3>
-        <form action="" class="home-search">
+        <form action="/property-search.php" class="home-search">
             <div class="top-search-property">
                 <div class="left-search-box-property">
                     <div class="input-top">
                         <label for="location">location</label>
-                        <input type="text" name="location" id="location">
+                        <input type="text" name="location", value="<?php echo($_GET['location'] ?? '')?>", id="location">
                     </div>
                 </div>
                 <div class="right-search-box-property">
                     <div class="input-top">
                         <label for="range">Range</label>
-                        <select name="range" id="range">
+                        <select name="range", value="<?php echo($_GET['range'] ?? '')?>", id="range">
                         <option value="5">5 miles</option>
                         <option value="10">10 miles</option>
                         <option value="15">15 miles</option>
@@ -39,15 +41,15 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
                 <div class="hidden-search" id="hidden-search">
                     <div class="input-top">
                         <label for="min-price">Min Price</label>
-                        <input type="number" name="min-price" id="min-price">
+                        <input type="number" name="min-price", value="<?php echo($_GET['min-price'] ?? '')?>", id="min-price">
                     </div>
                     <div class="input-top">
                         <label for="max-price">Max Price</label>
-                        <input type="number" name="max-price" id="max-price">
+                        <input type="number" name="max-price", value="<?php echo($_GET['max-price'] ?? '')?>", id="max-price">
                     </div>
                     <div class="input-top">
                         <label for="range">Property Type</label>
-                        <select name="property-type" id="property-type">
+                        <select name="property-type", value="<?php echo($_GET['property-type'] ?? '')?>", id="property-type">
                         <option value="house">Houses</option>
                         <option value="apartment">Apartments</option>
                         <option value="bungalow">Bungalows</option>
@@ -58,21 +60,10 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
             <input class ="property-search" id ="property-search" type="submit" value="search">
         </form>
     </section>
-    <section class="leased-properties">
-        <a href="">
-            <div class="property">
-                <div class="lease-image">
-                    <img src="/assets/test-property.webp" alt="property">
-                </div>
-                <div class="lease-info">
-                    <h3>Property Name</h3>
-                    <p>Property:63 boston street</p>
-                    <p>Postcode:SH2 5RD</p>
-                    <p>Next Rent:13/04/23</p>
-                </div>
-            </div>
-        </a>
+    <section class="leased-properties" id="listings-container">
+        <!-- results go here -->
     </section>
+    <div id=scroller></div>
 </main>
 
 <?php

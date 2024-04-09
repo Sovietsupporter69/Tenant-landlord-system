@@ -4,64 +4,61 @@
 // params:
 //  query: string
 
+$page_size = 3;
 
 // validate arguments
-if (!isset($_GET['query'])) {
-    die("you must provide a query string");
-}
 
-$query = $_GET['query'];
+$query = $_GET['query'] ?? "";
+$min_price = $_GET['min-price'] ?? 0;
+$max_price = $_GET['max-price'] ?? PHP_INT_MAX;
+$min_bedrooms = $_GET['min-bedrooms'] ?? 0;
+$max_bedrooms = $_GET['max-bedrooms'] ?? PHP_INT_MAX;
+$cursor = $_GET['cursor'] ?? 0;
 
-
-if (!isset($_GET['min-price'])) {
-    die("please provide a minimum price");
-}
-
-$min_price = $_GET['min-price'];
-
-
-if (!isset($_GET['max-price'])) {
-    die("please provide a maximum price");
-}
-
-$max_price = $_GET['max-price'];
-
-
-if (!isset($_GET['min-bedrooms'])) {
-    die("please provide a minimum number of bedrooms");
-}
-
-$min_bedrooms = $_GET['min-bedrooms'];
-
-
-if (!isset($_GET['max-bedrooms'])) {
-    die("please provide a maximum number of bedrooms");
-}
-
-$min_bedrooms = $_GET['max-bedrooms'];
-
+$min_price = ($min_price !== '') ? $min_price : 0;
+$max_price = ($max_price !== '') ? $max_price : PHP_INT_MAX;
+$min_bedrooms = ($min_bedrooms !== '') ? $min_bedrooms : 0;
+$max_bedrooms = ($max_bedrooms !== '') ? $max_bedrooms : PHP_INT_MAX;
 
 // select from database based on some query logic
 
+$query = "%$query%";
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
 
-$stmt = $conn->prepare("SELECT * FROM tms.property WHERE ? < rental_price and ? > rental_price;");
-$stmt->bind_param("ii", $min_price, $max_price);
+$stmt = $conn->prepare(<<<SQL
+
+SELECT p.*, MAX(pi.image_path) AS image_path
+FROM tms.property p 
+LEFT JOIN tms.property_image pi ON p.id = pi.property_id
+WHERE 
+    ? <= p.rental_price and 
+    ? >= p.rental_price and 
+    ? <= p.num_bedrooms and 
+    ? >= p.num_bedrooms and 
+    p.description LIKE ? and
+    p.id > ?
+GROUP BY p.id
+ORDER BY p.id
+LIMIT $page_size;
+
+SQL);
+
+$stmt->bind_param("iiiisi", $min_price, $max_price, $min_bedrooms, $max_bedrooms, $query, $cursor);
 $stmt->execute();
 $result = $stmt->get_result();
-var_dump($result);
 
+$arr = array();
+while($row = $result->fetch_assoc()) {
+    $arr[] = $row;
+    $id=$row['id'];
+}
 
-$stmt = $conn->prepare("SELECT * FROM tms.property WHERE ? < num_bedrooms and ? > num_bedrooms;");
-$stmt->bind_param("ii", $min_bedrooms, $max_bedrooms);
-$stmt->execute();
-$result = $stmt->get_result();
-var_dump($result);
+$json = array(
+    "listings"=>$arr,
+    "cursor"=>$id
+);
 
-
-
-
-echo json_encode($result);
+echo json_encode($json);
 
 ?>
