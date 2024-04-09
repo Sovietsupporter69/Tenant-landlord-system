@@ -421,8 +421,13 @@
         width: 100%;
         padding-left: 20px;
     }
-    .payment-options{
-        width: 100px;
+    .payment-option{
+        width: 200px;
+        
+    }
+    .payment-option img{
+        width: 100%;
+        border-radius: 12px;
     }
     .maintenance a button{
         width: 100%;

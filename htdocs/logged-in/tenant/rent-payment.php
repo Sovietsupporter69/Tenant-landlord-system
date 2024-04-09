@@ -20,10 +20,10 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
             <img src="/assets/Gpay.png" alt="">
         </div>
         <div class="payment-option">
-            <img src="/assets/apple-pay.png" alt="">
+            <img src="/assets/apple-pay.jpg" alt="">
         </div>
         <div class="payment-option">
-            <img src="/assets/pay-pal-2.png" alt="">
+            <img src="/assets/pay-pal-2.jpg" alt="">
         </div>
     </section>
 </main>

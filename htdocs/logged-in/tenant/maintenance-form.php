@@ -17,8 +17,6 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
         <h2>Maintenance Request Form</h2>
         <div class="maintenance-request">
             <form action="/API/maintenance/submit.php" method="post">
-                <label for="date">Date:</label>
-                <input type="date" name="date" id="date" required>
                 <label for="title">Title:</label>
                 <input type="text" name="title" id="title" required>
                 <label for="property">Property:</label>
