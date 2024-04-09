@@ -9,6 +9,7 @@ $result = $stmt->get_result();
 
 function render_leased($end_date, $address, $postcode, $image) {
     $code = <<<EOT
+    <a href="">
     <div class="property">
     <div class="lease-image">
     <img src="/images/$image" alt="property">
@@ -20,6 +21,7 @@ function render_leased($end_date, $address, $postcode, $image) {
     <p>End date:$end_date</p>
     </div>
     </div>
+    </a>
     EOT;
     echo($code);
 }
@@ -38,7 +40,6 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
 <main>
     <section class="leased-properties">
         <h2>Leased Properties</h2>
-        <a href="">
         <?php
         if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
@@ -49,7 +50,6 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
             echo("<p>You have no properties to display</p>");
         }
         ?> 
-        </a>
     </section>
 </main>
 
