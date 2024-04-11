@@ -578,4 +578,8 @@
     #scroller {
         height: 200px;
     }
+
+    .alert, .maintenance {
+        display: none;
+    }
 }
