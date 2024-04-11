@@ -1,5 +1,7 @@
-
-// used https://stackoverflow.com/questions/4459379/preview-an-image-before-it-is-uploaded to get image preview code
+// Websdite:Stack Overflow
+// Name Of Webpage: Preview an image before it is uploaded 
+// Date:Nov 27, 2014 at 8:17
+// URL:https://stackoverflow.com/a/27165977
 var loadFile = function(event){
     var output =document.getElementById('output');
     output.src = URL.createObjectURL(event.target.files[0]);

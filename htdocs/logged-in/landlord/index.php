@@ -41,7 +41,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php")
 ?>
 <div>
-    <h1> View properties </h1>
+    <h1>Hello <?php echo(ucwords($username)); ?></h1>
 </div>
 
 <div>
