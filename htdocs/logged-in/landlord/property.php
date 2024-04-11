@@ -39,7 +39,19 @@ define("header-content", '<script src="/js/burger-menu.js" defer></script>');
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php");
-echo("<script>var images = [\"03046e52512591ef0d9f3ebe21d3a57d\", \"36cda2ad1e1efc3c98a19ea8414459fe\", \"c61fda6acba701e46f9a94cb965e87fb\"]</script>"); 
+
+// set images
+$stmt = $conn->prepare("SELECT image_path FROM property_image WHERE property_id = ?;");
+$stmt->bind_param("s", $property_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+echo("<script>var images = [");
+while ($path = mysqli_fetch_column($result)) { 
+    echo("\t\"$path\",");
+}
+echo("]</script>");
+
 ?>
 <main class="padding-bottom-50">
     <section class="selected-property-lan">
