@@ -2,12 +2,30 @@
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/check_auth.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
 
-$stmt = $conn->prepare("SELECT lease.end_date, property.address, property.postcode, pi.image_path FROM lease INNER JOIN property ON (lease.property_id = property.id) LEFT JOIN property_image pi ON property.id = pi.property_id WHERE lease.tenant_id = ? GROUP BY property.id;");
+$stmt = $conn->prepare(<<<EOT
+
+SELECT
+    lease.end_date,
+    property.address,
+    property.postcode,
+    pi.image_path,
+    u.email AS landlord_email
+FROM
+    lease
+    INNER JOIN property ON (lease.property_id = property.id)
+    LEFT JOIN property_image pi ON property.id = pi.property_id
+    INNER JOIN user u ON property.landlord_id = u.id
+WHERE
+    lease.tenant_id = ?
+GROUP BY
+    property.id
+EOT);
+
 $stmt->bind_param("s", $userid);
 $stmt->execute();
 $result = $stmt->get_result();
 
-function render_leased($end_date, $address, $postcode, $image) {
+function render_leased($end_date, $address, $postcode, $image, $landlord_email) {
     $code = <<<EOT
     <a href="">
     <div class="property">
@@ -15,7 +33,7 @@ function render_leased($end_date, $address, $postcode, $image) {
     <img src="/images/$image" alt="property">
     </div>
     <div class="lease-info">
-    <h3>Property Name</h3>
+    <h3>$landlord_email</h3>
     <p>Address:$address</p>
     <p>Postcode:$postcode</p>
     <p>End date:$end_date</p>
@@ -46,7 +64,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
         <?php
         if (mysqli_num_rows($result) > 0) {
             while($row = mysqli_fetch_assoc($result)) {
-                render_leased($row['end_date'], $row['address'], $row['postcode'], $row['image_path']);
+                render_leased($row['end_date'], $row['address'], $row['postcode'], $row['image_path'], $row['landlord_email']);
             }
         }
         else {
