@@ -504,6 +504,12 @@
         padding: 10px;
     }
 
+    footer {
+        flex-direction: row;
+        justify-content: space-evenly;
+        display: flex;
+    }
+
     footer>div {
         text-align: center;
     }
