@@ -12,6 +12,7 @@ $id = $data["id"];
 $username = $data["username"];
 $email = $data["email"];
 $type = $data["type"];
+$password = $data["password"];
 
 // these variables define properties about the page
 // and are managed automatically by the header
@@ -46,12 +47,12 @@ require_once ($_SERVER["DOCUMENT_ROOT"] . "/private/banners/$type.php");
 
             <li>
                 <label for="password">password:</label>
-                <input type="password" class="form-control" id="password" name="password">
+                <input type="password" class="form-control" id="password" name="password" value="<?php echo($password) ?>">
             </li>
 
             <li>
                 <label for="password2">confirm password:</label>
-                <input type="password" class="form-control" id="password2" name="password2">
+                <input type="password" class="form-control" id="password2" name="password2" value="<?php echo($password) ?>">
             </li>
 
             <li>
