@@ -79,9 +79,10 @@
     height: 300px;
 }
 
-.alert {
+/*.alert {
     display:none;
-}
+}*/
+
 .alert2 {
     display:none;
 }
@@ -102,6 +103,10 @@
     display:none;
 }
 
+/*.maintenance {
+    display:none;
+}*/
+
 .alert, .alert2, .alert3, .lease, .lease2, .lease3 {
     margin:auto;
     text-align:center;
@@ -111,6 +116,24 @@
     color:#ffffff;
 }
 
+.maintenance {
+    text-align:center;
+    font-size:20px;
+    position:fixed;
+    color:#ffffff;
+    background-color:#000000;
+    border:2px solid #ffffff
+}
+
+.maintenance-header {
+    padding: 25px 15px;
+    font-size:30px;
+}
+
+.maintenance-container {
+    padding:15px;
+    border:1px solid #ffffff;
+}
 
 .closebtn {
     margin-left: 15px;
