@@ -34,29 +34,43 @@ if($userid != $landlord_id) {
 // delete them if you do not need them in your file
 define("title", "view_property");
 define("special_css", "property.css");
-// define("special_script", "page specific script");
+define("special_script", "img-scroller.js");
 define("header-content", '<script src="/js/burger-menu.js" defer></script>');
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php") 
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php");
+echo("<script>var images = [\"03046e52512591ef0d9f3ebe21d3a57d\", \"36cda2ad1e1efc3c98a19ea8414459fe\", \"c61fda6acba701e46f9a94cb965e87fb\"]</script>"); 
 ?>
-
+<main class="padding-bottom-50">
+    <section class="selected-property-lan">
+        <span class="material-symbols-outlined arrow" id="previous-img">arrow_back_ios</span>
+        <div class="img-container">
+            <img alt="property" id="img-slider-img">
+        </div>
+        <span class="material-symbols-outlined arrow" id="next-img">arrow_forward_ios</span>
+    </section>
 <?php
     echo(<<<EOT
     
-    <main>
-        <span><p>address:</p><p>$address</p></span>
-        <span><p>postcode:</p><p>$postcode</p></span>
-        <span><p>rental_price:</p><p>$rental_price</p></span>
-        <span><p>property_type:</p><p>$property_type</p></span>
-        <span><p>num_bedrooms:</p><p>$num_bedrooms</p></span>
-        <span><p>num_bathrooms:</p><p>$num_bathrooms</p></span>
-        <span><p>description:</p><p>$description</p></span>
-    </main>
+        <span><p>Address:</p><p>$address</p></span>
+        <span><p>Postcode:</p><p>$postcode</p></span>
+        <span><p>Rental Price:</p><p>$rental_price</p></span>
+        <span><p>Property Type:</p><p>$property_type</p></span>
+        <span><p>Number Of Bedrooms:</p><p>$num_bedrooms</p></span>
+        <span><p>Number Of Bathrooms:</p><p>$num_bathrooms</p></span>
+        <span><p>Description:</p><p>$description</p></span>
     
     EOT);
 ?>
-
+<div class="landlord-prop-button">
+    <a href="">
+        <button>Edit Images</button>
+    </a>
+    <a href="">
+        <button>Edit Property</button>
+    </a>
+</div>
+</main>
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/footer.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_tail.php");
