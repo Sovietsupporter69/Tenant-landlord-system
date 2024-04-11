@@ -126,3 +126,7 @@
 .closebtn:hover {
     color: #ff0000;
 }
+.alt-pay{
+    display: flex;
+    flex-direction: row;
+}
