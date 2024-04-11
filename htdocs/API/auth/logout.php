@@ -9,7 +9,7 @@ if(!isset($_COOKIE['auth'])) {
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/redis.php");
 
 $secret = $_COOKIE['auth'];
-$redis_client->del("tms_auth_token:$secret");
+$redis_client->del("tms_user_session:$secret");
 
 // send to homepage
 header("Location: /");

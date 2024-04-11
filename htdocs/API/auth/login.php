@@ -43,7 +43,7 @@ if ($user['password'] != $password) {
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/redis.php");
 
 $secret = bin2hex(random_bytes(32));
-$redis_client->setex("tms_auth_token:$secret", 60 * 20, $user['id']);
+$redis_client->setex("tms_user_session:$secret", 60 * 20, json_encode($user));
 
 setcookie("auth", $secret, path:'/', httponly:true);
 

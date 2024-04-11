@@ -38,6 +38,9 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
 ?>
 
 <main>
+<div>
+    <h1>Hello <?php echo(ucwords($username)); ?></h1>
+</div>
     <section class="leased-properties">
         <h2>Leased Properties</h2>
         <?php
