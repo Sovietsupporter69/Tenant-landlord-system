@@ -9,7 +9,8 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 function render_listing($id, $image, $address, $postcode, $cost) {
-    $code = <<<EOT
+    $id = urlencode($id);
+    echo(<<<EOT
     <a href="property.php?id=$id">
     <div class="property">
     <div class="lease-image">
@@ -22,8 +23,7 @@ function render_listing($id, $image, $address, $postcode, $cost) {
     </div>
     </div>
     </a>
-    EOT;
-    echo($code);
+    EOT);
 }
 
 ?>
