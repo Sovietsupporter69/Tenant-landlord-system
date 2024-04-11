@@ -21,5 +21,6 @@ $redis_userdata = json_decode($redis_userdata, associative:true);
 $userid = $redis_userdata['id'];
 $username = $redis_userdata['username'];
 $email = $redis_userdata['email'];
+$user_type = $redis_userdata['type'];
 
 ?>

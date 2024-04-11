@@ -1,0 +1,3 @@
+# Redirect /shared/ to /index.php
+RewriteEngine On
+RewriteRule ^shared/?$ /logged-in/index.php [L]
