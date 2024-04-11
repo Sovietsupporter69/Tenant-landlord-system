@@ -21,11 +21,12 @@ if (isset($reset_token)) {
 
 // update redis with a token
 $reset_token = bin2hex(random_bytes(32));
-$redis_client->setex("tms_password_reset:$email", 15*60, $reset_token);
+$redis_client->setex("tms_password_reset:$email", 15*60, $email);
+$redis_client->setex("tms_password_token:$reset_token", 15*60, $email);
 
 // TODO: send the email with the password reset link
 
 // notify the user the email was sent
-header("Location: /auth/password-reset.php?sent");
+header("Location: /auth/password-reset.php?sent&code=$reset_token");
 
 ?>
