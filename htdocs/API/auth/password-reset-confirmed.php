@@ -18,7 +18,7 @@ else {
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/redis.php");
 
-$email = $redis_client->get("tms_password_link_clicked:$code");
+$email = $redis_client->getdel("tms_password_link_clicked:$code");
 if (!isset($email)) {
     die("invalid code");
 }
@@ -36,6 +36,9 @@ EOT);
 
 $stmt->bind_param("ss", $password, $email);
 $stmt->execute();
+
+$redis_client->del("tms_password_reset:$email");
+$redis_client->del("tms_password_token:$code");
 
 header('Location: /auth/login.php');
 
