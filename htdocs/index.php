@@ -54,6 +54,14 @@ echo("<script>var images = [\"03046e52512591ef0d9f3ebe21d3a57d\", \"36cda2ad1e1e
     Your lease has expired. Please renew it now!!
 </div>
 
+<div class="maintenance">
+    <div class="maintenance-header"><b><u>Maintenance update</b></u></div>
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <div class="maintenance-container">
+        <p>Between 10:00 and 12:00 on 20/04/2024, maintenance updates will be done to the website.<br>During this time, the website will be down.</p>
+    </div>
+</div>
+
 <main>
     <section class="welcome-banner">
         <h1>Tenant Landlord System</h1>
