@@ -22,7 +22,7 @@ $redis_client->setex("tms_password_link_clicked:$code", 60 * 5, $email);
 // and are managed automatically by the header
 // delete them if you do not need them in your file
 define("title", "password reset");
-// define("special_css", "page specific css");
+define("special_css", "auth.css");
 // define("special_script", "page specific script");
 // define("header-content", "custom head contents here");
 
