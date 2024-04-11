@@ -4,10 +4,11 @@
 }
 .img-container{
     min-width: 200px;
-    min-height: 100px;
+    max-height: 255px;
     width: 400px;
     max-height: 267px;
     height: auto;
+    max-width: 200px;
 }
 .leased-properties h2{
     text-align: center;
@@ -62,4 +63,8 @@
 .alt-pay{
     display: flex;
     flex-direction: column;
+}
+.selected-property-lan{
+    max-width: 238px;
+    max-height: 355.76px;
 }
