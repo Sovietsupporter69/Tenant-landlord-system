@@ -10,8 +10,17 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 //require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
 
-// ideally we can make this random somehow
-echo("<script>var images = [\"03046e52512591ef0d9f3ebe21d3a57d\", \"36cda2ad1e1efc3c98a19ea8414459fe\", \"c61fda6acba701e46f9a94cb965e87fb\"]</script>");
+// set random images
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
+$stmt = $conn->prepare("SELECT image_path FROM property_image ORDER BY RAND() LIMIT 5");
+$stmt->execute();
+$result = $stmt->get_result();
+
+echo("<script>var images = [");
+while ($path = mysqli_fetch_column($result)) { 
+    echo("\t\"$path\",");
+}
+echo("]</script>");
 
 ?>
 
