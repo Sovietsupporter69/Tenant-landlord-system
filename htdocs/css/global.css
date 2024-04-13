@@ -585,7 +585,7 @@
         height: 200px;
     }
 
-    .alert, .maintenance {
+    .alert{
         display: none;
     }
 }
