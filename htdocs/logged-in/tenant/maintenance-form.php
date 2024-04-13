@@ -1,5 +1,18 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/check_auth.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
+
+$stmt = $conn->prepare("SELECT property.id, property.address, property.postcode FROM lease INNER JOIN property ON lease.property_id = property.id WHERE lease.tenant_id = ?;");
+$stmt->bind_param("s", $userid);
+$stmt->execute();
+$result = $stmt->get_result();
+
+function add_property_details($address, $postcode, $properyid) {
+    $code = <<<EOT
+    <option value=/"$propertyid/">$address - $postcode</option>
+    EOT;
+    echo($code);
+}
 
 // these variables define properties about the page
 // and are managed automatically by the header
@@ -21,7 +34,16 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
                 <input type="text" name="title" id="title" required>
                 <label for="property">Property:</label>
                 <select name="property" id="property">
-                    <option value=""></option>
+                    <?php 
+                        if (mysqli_num_rows($result) > 0) {
+                            while($row = mysqli_fetch_assoc($result)) {
+                                add_property_details($row['address'], $row['postcode'], $row['id']);
+                            }
+                        }
+                        else {
+                            echo("<p>You have no properties to display</p>");
+                        }
+                    ?>
                 </select>
                 <label for="urgency">Urgency:</label>
                 <select name="urgency" id="urgency">
