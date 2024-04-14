@@ -1,4 +1,12 @@
 <?php
+
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/check_auth_soft.php");
+if ($user_logged_in) {
+    setcookie('auth','');
+    header("Location: /logged-in/index.php");
+    die();
+}
+
 // these variables define properties about the page
 // and are managed automatically by the header
 // delete them if you do not need them in your file
