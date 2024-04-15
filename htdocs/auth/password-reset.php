@@ -25,14 +25,6 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
     }
     if (isset($_GET['sent'])) {
         echo('<p class="success">Email sent</p>');
-
-        // temp start
-        $code = $_GET['code'];
-        echo(<<<EOT
-        <a href="password-link.php?code=$code">(DEMO) click here to use your code</a>
-        EOT);
-        // temp end
-
     }
     ?>
 
