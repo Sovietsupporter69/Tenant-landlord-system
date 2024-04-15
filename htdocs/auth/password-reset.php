@@ -25,6 +25,11 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
     }
     if (isset($_GET['sent'])) {
         echo('<p class="success">Email sent</p>');
+
+        if (isset($_GET['provider'])) {
+            $provider = $_GET['provider'];
+            echo("<p class=\"centre\">open <a href=\"https://$provider\">$provider</a></p>");
+        }
     }
     ?>
 
