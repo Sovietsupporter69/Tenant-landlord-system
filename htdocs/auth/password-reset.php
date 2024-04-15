@@ -34,8 +34,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
     ?>
 
     <form action="/API/auth/password-reset.php" method="post">
-    
-    <ul>
+        <ul>
             <li>
                 <label for="usr">Email:</label>
                 <input type="text" class="form-control" id="email" name="email" required>

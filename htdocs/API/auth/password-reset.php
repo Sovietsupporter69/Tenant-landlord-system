@@ -25,7 +25,7 @@ $redis_client->setex("tms_password_reset:$email", 15*60, $email);
 $redis_client->setex("tms_password_token:$reset_token", 15*60, $email);
 
 // send email with the token
-$reset_url = "https://" . $_SERVER["HTTP_HOST"] . "/auth/password-reset.php?token=$reset_token";
+$reset_url = "https://" . $_SERVER["HTTP_HOST"] . "/auth/password-link.php?token=$reset_token";
 
 $path = $_SERVER["DOCUMENT_ROOT"]."/private/mail/password-reset.html";
 $file_contents = file_get_contents($path);
