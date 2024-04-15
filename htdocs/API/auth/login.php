@@ -49,11 +49,6 @@ setcookie("auth", $secret, path:'/', httponly:true);
 
 // redirect to logged in homepage
 
-if ($user['type'] == 'landlord') {
-    header("Location: /logged-in/landlord/index.php");
-    die();
-}
-
-header("Location: /logged-in/tenant/index.php");
+header("Location: /logged-in/$user_type/index.php");
 
 ?>
