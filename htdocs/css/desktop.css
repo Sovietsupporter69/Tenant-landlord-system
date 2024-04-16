@@ -116,14 +116,14 @@
     color:#ffffff;
 }
 
-/*.service {
+.service {
     text-align:center;
     font-size:20px;
     position:fixed;
     color:#ffffff;
     background-color:#000000;
     border:2px solid #ffffff
-}*/
+}
 
 .service-header {
     padding: 25px 15px;
