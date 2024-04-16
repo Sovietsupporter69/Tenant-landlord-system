@@ -172,9 +172,13 @@
         margin-right: auto;
         min-height: 200px;
     }
-    .property,.edit-img{
+    .property{
         width: 100%;
         /* height: 100%; */
+        background-color:#FAF9F6;
+        border-radius: 12px;
+    }
+    .edit-img{
         background-color:#FAF9F6;
         border-radius: 12px;
     }
@@ -192,28 +196,18 @@
         margin: 20px 0px 20px 0px;
 
     }
-    .edit-img{
-        display: flex;
-        flex-direction: column;
-        width: 20%;
-        flex: 20%;
-        max-width: 350px;
-        justify-content: center;
-        align-items: center;
-        margin: 0px 20px 0px 20px;
-    }
     .edit-img button{
         width: 60%;
         padding: 5px;
         border-radius: 12px;
     }
-    .img-row{
+    /* .img-row{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content:space-evenly ;
         margin: 20px 0px 20px 0px;
-    }
+    } */
     .edit-img-cont{
         height: 75%;
         width: 75%;
@@ -520,6 +514,11 @@
         width: 100%;
         border-radius: 12px;
         padding: 5px;
+    }
+    .title{
+        display: flex;
+        justify-content:center;
+        align-content: center;
     }
     @keyframes fadeIn {
         0% {

@@ -159,3 +159,20 @@
 .selected-property-lan{
     min-width: 467px;
 }
+.img-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:space-evenly ;
+    margin: 20px 0px 20px 0px;
+}
+.edit-img{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    flex: 20%;
+    max-width: 350px;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 20px 0px 20px;
+}

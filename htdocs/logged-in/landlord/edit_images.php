@@ -14,6 +14,9 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
 ?>
 
 <main>
+    <section class="title">
+        <h2>Edit Images</h2>
+    </section>
     <section class="img-row">
         <div class="edit-img">
             <div class="edit-img-cont">

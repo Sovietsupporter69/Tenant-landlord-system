@@ -127,3 +127,28 @@
     max-width: 238px;
     max-height: 355.76px;
 }
+.img-row{
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content:space-evenly ;
+    margin: 20px 0px 20px 0px;
+    align-items: center;
+    justify-content: center;
+}
+.edit-img{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    flex: 20%;
+    max-width: 350px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 20px 10px 20px;
+}
+.edit-img *{
+    padding: 10px 0px 10px 0px;
+}
+.edit-img button{
+    margin: 5px 0px 5px 0px;
+}
