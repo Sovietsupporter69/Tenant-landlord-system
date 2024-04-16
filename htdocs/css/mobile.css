@@ -85,6 +85,10 @@
     display:none;
 }
 
+/*.service {
+    display:none;
+}*/
+
 .alert, .alert2, .alert3, .lease, .lease2, .lease3 {
     margin:auto;
     text-align:center;
@@ -96,16 +100,16 @@
     top:0;
 }
 
-.maintenance {
+.service {
     text-align:center;
     border:2px solid #ffffff;
 }
 
-.maintenance-header {
+.service-header {
     font-size:25px;
 }
 
-.maintenance-container {
+.service-container {
     border:1px solid #ffffff;
     font-size:20px;
 }

@@ -71,10 +71,10 @@ echo("]</script>");
     Your lease has expired. Please renew it now!!
 </div>
 
-<div class="maintenance">
-    <div class="maintenance-header"><b><u>Maintenance update</b></u></div>
+<div class="service">
+    <div class="service-header"><b><u>Maintenance update</b></u></div>
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-    <div class="maintenance-container">
+    <div class="service-container">
         <p>Between 10:00 and 12:00 on 20/04/2024, maintenance updates will be done to the website.<br>During this time, the website will be down.</p>
     </div>
 </div>
