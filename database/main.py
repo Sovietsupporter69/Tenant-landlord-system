@@ -191,4 +191,27 @@ if (GEN_DATA) :
     conn.execute(insert(MaintenanceRequest).values(property_id="6", tenant_id=1, title="Taps broken", description="The kitchen sink tap has stopped and it doesn't seem cloged so it might be something important", urgency="Medium", open_date=datetime.date(2023, 10, 13), close_date=datetime.date(2023, 10, 18)))
     conn.execute(insert(MaintenanceRequest).values(property_id="6", tenant_id=1, title="Light went out", description="One of the lights in the living room has gone out and I cant reach it myself", urgency="Low", open_date=datetime.date(2024, 1, 15), close_date=datetime.date(2024, 1, 27)))
 
+    # Payments
+    conn.execute(insert(Payment).values(lease_id="1", amount=250, payment_date=datetime.date(2023, 5, 31),  payment_method = "Google Pay"))
+    conn.execute(insert(Payment).values(lease_id="1", amount=2000, payment_date=datetime.date(2023, 8, 5),  payment_method = "Apple Pay"))
+    conn.execute(insert(Payment).values(lease_id="1", amount=50, payment_date=datetime.date(2024, 2, 27),  payment_method = "Apple Pay"))
+    conn.execute(insert(Payment).values(lease_id="2", amount=425, payment_date=datetime.date(2023, 4, 15),  payment_method = "Google Pay"))
+    conn.execute(insert(Payment).values(lease_id="3", amount=575, payment_date=datetime.date(2023, 10, 19),  payment_method = "Apple Pay"))
+    conn.execute(insert(Payment).values(lease_id="3", amount=800, payment_date=datetime.date(2024, 3, 7),  payment_method = "Google Pay"))
+    conn.execute(insert(Payment).values(lease_id="4", amount=125, payment_date=datetime.date(2023, 3, 23),  payment_method = "Apple Pay"))
+    conn.execute(insert(Payment).values(lease_id="6", amount=1025, payment_date=datetime.date(2023, 6, 14),  payment_method = "Apple Pay"))
+    conn.execute(insert(Payment).values(lease_id="6", amount=900, payment_date=datetime.date(2023, 11, 4),  payment_method = "Apple Pay"))
+    conn.execute(insert(Payment).values(lease_id="6", amount=375, payment_date=datetime.date(2024, 1, 7),  payment_method = "Google Pay"))
+    conn.execute(insert(Payment).values(lease_id="7", amount=550, payment_date=datetime.date(2023, 8, 27),  payment_method = "Apple Pay"))
+    conn.execute(insert(Payment).values(lease_id="7", amount=100, payment_date=datetime.date(2024, 4, 14),  payment_method = "Apple Pay"))
+
+# class Payment(Base):
+#     __tablename__ = 'payment'
+#     id = Column(Integer, primary_key=True, autoincrement=True)
+#     lease_id = Column(Integer, ForeignKey('lease.id'))
+#     amount = Column(DECIMAL)
+#     payment_date = Column(Date)
+#     payment_method = Column(String(128))
+
+#     lease = relationship("Lease", back_populates="payments")
 conn.commit()
