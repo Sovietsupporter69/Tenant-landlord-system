@@ -42,7 +42,6 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
         </a>
         <div class="maintenance-history">
             <div class="requests">
-                <a href="">
                     <?php
                         if (mysqli_num_rows($result) > 0) {
                             while($row = mysqli_fetch_assoc($result)) {
@@ -53,7 +52,6 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
                             echo("<p>You have no properties to display</p>");
                         }
                     ?>
-                </a>
             </div>
         </div>
     </section>
