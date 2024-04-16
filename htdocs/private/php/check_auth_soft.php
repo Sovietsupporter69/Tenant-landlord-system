@@ -1,9 +1,4 @@
-<?php 
-
-if(!isset($_COOKIE['auth'])) {
-    header("Location: /auth/login.php?expired");
-    die();
-}
+<?php
 
 $auth_secret = $_COOKIE['auth'];
 

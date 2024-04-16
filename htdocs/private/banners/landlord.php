@@ -21,6 +21,7 @@
                 <menu>
                     <li><a href="/logged-in/landlord/index.php">Home</a></li>
                     <li><a href="/logged-in/landlord/add_property.php">Add a new property</a></li>
+                    <li><a href="/logged-in/landlord/generate_lease.php">Generate lease</a></li>
                     <li><a href="/logged-in/landlord/account.php">Account Settings</a></li>
                 </menu>
             </nav>

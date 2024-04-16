@@ -1,5 +1,22 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/check_auth.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
+
+$stmt = $conn->prepare("SELECT payment.amount, payment.payment_date FROM payment INNER JOIN lease ON payment.lease_id = lease.id WHERE lease.tenant_id = ?;");
+$stmt->bind_param("i", $userid);
+$stmt->execute();
+$result = $stmt->get_result();
+
+function render_rent($amount, $date) {
+    $code = <<<EOT
+    <div class="payment">
+        <p>£$amount</p>
+        <p>$date</p>
+        <button>Details</button>
+    </div>
+    EOT;
+    echo($code);
+}
 
 // these variables define properties about the page
 // and are managed automatically by the header
@@ -22,66 +39,16 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
         <div class="payment-history">
             <div class="payments">
                 <a href="">
-                    <div class="payment">
-                        <p>£250</p>
-                        <p>12/14/24</p>
-                        <button>Details</button>
-                    </div>
-                    <div class="payment">
-                        <p>£250</p>
-                        <p>12/14/24</p>
-                        <button>Details</button>
-                    </div>
-                    <div class="payment">
-                        <p>£250</p>
-                        <p>12/14/24</p>
-                        <button>Details</button>
-                    </div>
-                    <div class="payment">
-                        <p>£250</p>
-                        <p>12/14/24</p>
-                        <button>Details</button>
-                    </div>
-                    <div class="payment">
-                        <p>£250</p>
-                        <p>12/14/24</p>
-                        <button>Details</button>
-                    </div>
-                    <div class="payment">
-                        <p>£250</p>
-                        <p>12/14/24</p>
-                        <button>Details</button>
-                    </div>
-                    <div class="payment">
-                        <p>£250</p>
-                        <p>12/14/24</p>
-                        <button>Details</button>
-                    </div>
-                    <div class="payment">
-                        <p>£250</p>
-                        <p>12/14/24</p>
-                        <button>Details</button>
-                    </div>
-                    <div class="payment">
-                        <p>£250</p>
-                        <p>12/14/24</p>
-                        <button>Details</button>
-                    </div>
-                    <div class="payment">
-                        <p>£250</p>
-                        <p>12/14/24</p>
-                        <button>Details</button>
-                    </div>
-                    <div class="payment">
-                        <p>£250</p>
-                        <p>12/14/24</p>
-                        <button>Details</button>
-                    </div>
-                    <div class="payment">
-                        <p>£250</p>
-                        <p>12/14/24</p>
-                        <button>Details</button>
-                    </div>
+                    <?php
+                    if (mysqli_num_rows($result) > 0) {
+                        while($row = mysqli_fetch_assoc($result)) {
+                            render_rent($row['amount'], $row['payment_date']);
+                        }
+                    }
+                    else {
+                        echo("<p>You have no properties to display</p>");
+                    }
+                    ?>
                 </a>
             </div>
         </div>

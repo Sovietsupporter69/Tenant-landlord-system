@@ -2,18 +2,19 @@
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/check_auth.php");
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
 
-$stmt = $conn->prepare("SELECT maintenance_request.title, maintenance_request.urgency, maintenance_request.open_date, maintenance_request.close_date, pi.image_path FROM maintenance_request LEFT JOIN property_image pi ON maintenance_request.property_id = pi.property_id WHERE maintenance_request.tenant_id = ? GROUP BY maintenance_request.title;");
-$stmt->bind_param("s", $userid);
+$stmt = $conn->prepare("SELECT * FROM maintenance_request WHERE tenant_id=?;");
+$stmt->bind_param("i", $userid);
 $stmt->execute();
 $result = $stmt->get_result();
 
-function render_maintenance($title, $open_date, $close_date) {
+function render_maintenance($title, $open_date, $close_date, $request_id) {
     $code = <<<EOT
     <div class="request">
+    <a href="/logged-in/tenant/maintenance-details.php?id=$request_id">
     <p>$title</p>
     <p>$open_date</p>
     <p>$close_date</p>
-    <button>Details</button>
+    </a>
     </div>
     EOT;
     echo($code);
@@ -41,18 +42,16 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
         </a>
         <div class="maintenance-history">
             <div class="requests">
-                <a href="">
                     <?php
                         if (mysqli_num_rows($result) > 0) {
                             while($row = mysqli_fetch_assoc($result)) {
-                                render_maintenance($row['title'], $row['open_date'], $row['close_date'], $row['image_path']);
+                                render_maintenance($row['title'], $row['open_date'], $row['close_date'], /* $row['image_path'], */ $row['id']);
                             }
                         }
                         else {
                             echo("<p>You have no properties to display</p>");
                         }
                     ?>
-                </a>
             </div>
         </div>
     </section>

@@ -27,11 +27,12 @@ $result = $stmt->get_result();
 
 function render_leased($end_date, $address, $postcode, $image, $landlord_email) {
     $code = <<<EOT
-    <a href="">
     <div class="property">
+    <a href="">
     <div class="lease-image">
     <img src="/images/$image" alt="property">
     </div>
+    </a>
     <div class="lease-info">
     <strong><p><a href="mailto:$landlord_email">$landlord_email</a></p></strong>
     <p>Address:$address</p>
