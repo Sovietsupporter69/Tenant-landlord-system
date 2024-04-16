@@ -163,7 +163,7 @@
         border: 3px white solid;
         border-radius: 10%;
     }
-    .leased-properties a{
+    .leased-properties > a{
         padding-top:20px;
         text-decoration: none;
         width: 75%;

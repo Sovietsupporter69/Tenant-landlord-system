@@ -1,4 +1,12 @@
 <?php
+
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/check_auth_soft.php");
+$banner = "pre_auth";
+if ($user_logged_in) {
+    $banner = $user_type;
+}
+
+
 // these variables define properties about the page
 // and are managed automatically by the header
 // delete them if you do not need them in your file
@@ -8,7 +16,7 @@ define("special_script", "img-scroller.js");
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/document_head.php");
 //require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/landlord.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/$banner.php");
 
 // set random images
 require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");

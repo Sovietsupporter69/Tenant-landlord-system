@@ -26,19 +26,15 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/pre_auth.php")
     if (isset($_GET['sent'])) {
         echo('<p class="success">Email sent</p>');
 
-        // temp start
-        $code = $_GET['code'];
-        echo(<<<EOT
-        <a href="password-link.php?code=$code">(DEMO) click here to use your code</a>
-        EOT);
-        // temp end
-
+        if (isset($_GET['provider'])) {
+            $provider = $_GET['provider'];
+            echo("<p class=\"centre\">open <a href=\"https://$provider\">$provider</a></p>");
+        }
     }
     ?>
 
     <form action="/API/auth/password-reset.php" method="post">
-    
-    <ul>
+        <ul>
             <li>
                 <label for="usr">Email:</label>
                 <input type="text" class="form-control" id="email" name="email" required>

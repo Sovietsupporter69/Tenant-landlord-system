@@ -33,7 +33,7 @@ function render_leased($end_date, $address, $postcode, $image, $landlord_email) 
     <img src="/images/$image" alt="property">
     </div>
     <div class="lease-info">
-    <h3>$landlord_email</h3>
+    <strong><p><a href="mailto:$landlord_email">$landlord_email</a></p></strong>
     <p>Address:$address</p>
     <p>Postcode:$postcode</p>
     <p>End date:$end_date</p>
