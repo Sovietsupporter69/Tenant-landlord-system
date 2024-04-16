@@ -9,7 +9,7 @@ define("title", "logged in");
 // define("special_css", "page specific css");
 // define("special_script", "page specific script");
 
-$stmt = $conn->prepare("SELECT maintenance_request.title, maintenance_request.description, maintenance_request.urgency, maintenance_request.open_date, maintenance_request.clsoe_date, maintenance_request.property_id FROM maintenance_request WHERE maintenance_request.tenant_id = ?");
+$stmt = $conn->prepare("SELECT maintenance_request.title, maintenance_request.description, maintenance_request.urgency, maintenance_request.open_date, maintenance_request.close_date, maintenance_request.property_id FROM maintenance_request WHERE maintenance_request.tenant_id = ?");
 $stmt ->bind_param("s", $userid);
 $stmt -> execute();
 $result = $stmt->get_result();
