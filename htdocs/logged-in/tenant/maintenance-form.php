@@ -7,9 +7,9 @@ $stmt->bind_param("s", $userid);
 $stmt->execute();
 $result = $stmt->get_result();
 
-function add_property_details($address, $postcode, $properyid) {
+function add_property_details($address, $postcode, $propertyid) {
     $code = <<<EOT
-    <option value=/"$propertyid/">$address - $postcode</option>
+    <option value="$propertyid">$address - $postcode</option>
     EOT;
     echo($code);
 }
