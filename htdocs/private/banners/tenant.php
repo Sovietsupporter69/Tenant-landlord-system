@@ -2,7 +2,7 @@
     <header>
         <div class="bannerContainer">
             <div>
-                <a href="/logged-in/tenant/index.php">
+                <a href="index.php">
                     <span class="material-symbols-outlined">home</span>
                     <p>Home</p>
                 </a>
@@ -19,9 +19,11 @@
         <div>
             <nav class="mainNav">
                 <menu>
-                    <li><a href="/logged-in/tenant/index.php">Home</a></li>
+                    <li><a href="/index.php">Home</a></li>
+                    <li><a href="/logged-in/tenant/index.php">Properties</a></li>
                     <li><a href="/logged-in/tenant/maintenance-viewer.php">Maintenance</a></li>
                     <li><a href="/logged-in/tenant/account.php">Account Settings</a></li>
+                    <li><a href="/property-search.php">Search</a></li>
                 </menu>
             </nav>
         </div>
