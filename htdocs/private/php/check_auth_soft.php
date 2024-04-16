@@ -14,12 +14,12 @@ $redis_userdata = $redis_client->getex("tms_user_session:$auth_secret", 'ex', 20
 $user_logged_in = false;
 if (isset($redis_userdata)) {
     $user_logged_in = true;
+    
+    $redis_userdata = json_decode($redis_userdata, associative:true);
+    $userid = $redis_userdata['id'];
+    $username = $redis_userdata['username'];
+    $email = $redis_userdata['email'];
+    $user_type = $redis_userdata['type'];
 }
-
-$redis_userdata = json_decode($redis_userdata, associative:true);
-$userid = $redis_userdata['id'];
-$username = $redis_userdata['username'];
-$email = $redis_userdata['email'];
-$user_type = $redis_userdata['type'];
-
+    
 ?>

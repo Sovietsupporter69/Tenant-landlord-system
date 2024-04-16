@@ -52,6 +52,17 @@ echo("]</script>");
     It was due on 30/03/2024.
 </div>
 
+<?php
+if ($user_logged_in) {
+    $stmt = $conn->prepare("SELECT end_date FROM lease WHERE tenant_id=?;");
+    $stmt->bind_param("i", $userid);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $data = mysqli_fetch_assoc($result);
+    var_dump($data);
+}
+?>
+
 <div class="lease">
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     <strong><u>Reminder</u></strong><br>
@@ -72,8 +83,8 @@ echo("]</script>");
 </div>
 
 <div class="service">
-    <div class="service-header"><b><u>Maintenance update</b></u></div>
     <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <div class="service-header"><b><u>Maintenance update</b></u></div>
     <div class="service-container">
         <p>Between 10:00 and 12:00 on 20/04/2024, maintenance updates will be done to the website.<br>During this time, the website will be down.</p>
     </div>
