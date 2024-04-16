@@ -79,9 +79,9 @@
     height: 300px;
 }
 
-/*.alert {
+.alert {
     display:none;
-}*/
+}
 
 .alert2 {
     display:none;
@@ -91,9 +91,9 @@
     display:none;
 }
 
-/*.lease {
+.lease {
     display:none;
-}*/
+}
 
 .lease2 {
     display:none;
@@ -103,9 +103,9 @@
     display:none;
 }
 
-/*.service {
+.service {
     display:none;
-}*/
+}
 
 .alert, .alert2, .alert3, .lease, .lease2, .lease3 {
     margin:auto;
