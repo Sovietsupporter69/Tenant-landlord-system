@@ -75,10 +75,10 @@ echo("]</script>");
     EOT);
 ?>
 <div class="landlord-prop-button">
-    <a href="">
+    <a href="edit-images.php">
         <button>Edit Images</button>
     </a>
-    <a href="">
+    <a href="edit_property.php">
         <button>Edit Property</button>
     </a>
 </div>
