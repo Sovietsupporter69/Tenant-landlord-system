@@ -11,8 +11,10 @@
                     <p>Log out</p>
                 </a>
             </div>
-
             <div class="burger">
+                <p class="username">
+                    <?php echo(ucwords($username)); ?>
+                </p>
                 <span class="material-symbols-outlined">menu</span>
             </div>
         </div>

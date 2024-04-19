@@ -637,4 +637,8 @@
     /* .alert{
         display: none;
     } */
+
+    p.username {
+        font-weight: bold;
+    }
 }
