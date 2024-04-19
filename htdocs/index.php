@@ -141,10 +141,9 @@ if ($user_logged_in) {
     <section class="home-info">
         <h3>Uks most trusted rental website</h3>
         <p class="intro-para">
-        Welcome to our UK home leasing website, your one-stop destination for finding the perfect rental property in the United Kingdom. 
-        Whether you're looking for a cozy apartment in London, a charming cottage in the countryside, or a modern townhouse in Manchester, our user-friendly platform allows you to easily browse through a wide selection of properties, 
-        complete with detailed descriptions, photos. 
-        With our comprehensive search filters, finding your dream home has never been easier. Start your search today and let us help you find the perfect place to call home in the UK.
+        Welcome to pur tenancy mangament website, the uks leading tenancy website since 2011. 
+        We provide all types of accomodation from country cottages to inner city appartments.
+         Please feel free to browse all the properties we have on offer.
         </p>
         <div class="suggested-properties">
             <span class="material-symbols-outlined arrow" id="previous-img">arrow_back_ios</span>
