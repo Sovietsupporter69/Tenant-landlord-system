@@ -75,6 +75,9 @@ echo("]</script>");
     EOT);
 ?>
 <div class="landlord-prop-button">
+    <a href="add_images.php">
+        <button>Add Images</button>
+    </a>
     <a href="edit-images.php">
         <button>Edit Images</button>
     </a>

@@ -5,7 +5,8 @@
 define("title", "logged in");
 // define("special_css", "page specific css");
 define("special_script", "img-upload-preview.js");
-
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/check_auth.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/db_conn.php");
 require_once ($_SERVER["DOCUMENT_ROOT"] . "/private/document_head.php");
 require_once ($_SERVER["DOCUMENT_ROOT"] . "/private/banners/landlord.php");
 ?>
