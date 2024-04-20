@@ -33,20 +33,23 @@ echo("]</script>");
 ?>
 
 <div class="alert">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <span class="closebtn" <span class="material-symbols-outlined">close</span>
+    onclick="this.parentElement.style.display='none';">&times;</span>
     <strong><u>Reminder</u></strong><br>
     Your next rent payment is due on 20/05/2024.
 </div>
 
 <div class="alert2">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <span class="closebtn" <span class="material-symbols-outlined">close</span>
+onclick="this.parentElement.style.display='none';">&times;</span>
     <strong><u>Important Reminder</u></strong><br>
     Your rent is due soon.<br>
     Please make sure your rent is paid as soon as possible.
 </div>
 
 <div class="alert3">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <span class="closebtn" <span class="material-symbols-outlined">close</span>
+    onclick="this.parentElement.style.display='none';">&times;</span>
     <strong><u>Urgent</u></strong><br>
     Oops, you have forgotten to pay your rent.<br>
     It was due on 30/03/2024.
@@ -64,26 +67,30 @@ if ($user_logged_in) {
 ?>
 
 <div class="lease">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <span class="closebtn" <span class="material-symbols-outlined">close</span>
+    onclick="this.parentElement.style.display='none';">&times;</span>
     <strong><u>Reminder</u></strong><br>
     Your lease will expire on 18/04/2024.
 </div>
 
 <div class="lease2">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <span class="closebtn" <span class="material-symbols-outlined">close</span>
+    onclick="this.parentElement.style.display='none';">&times;</span>
     <strong><u>Important Reminder</u></strong><br>
     Your lease will expire soon.<br>
     Please make sure you renew it as soon as possible.
 </div>
 
 <div class="lease3">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <span class="closebtn" <span class="material-symbols-outlined">close</span>
+    onclick="this.parentElement.style.display='none';">&times;</span>
     <strong><u>Urgent</u></strong><br>
     Your lease has expired. Please renew it now!!
 </div>
 
 <div class="service">
-    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <span class="closebtn" <span class="material-symbols-outlined">close</span>
+    onclick="this.parentElement.style.display='none';">&times;</span>
     <div class="service-header"><b><u>Maintenance update</b></u></div>
     <div class="service-container">
         <p>Between 10:00 and 12:00 on 20/04/2024, maintenance updates will be done to the website.<br>During this time, the website will be down.</p>

@@ -13,6 +13,9 @@
             </div>
 
             <div class="burger">
+            <p class="username">
+                    <?php echo(ucwords($username)); ?>
+                </p>
             <span class="material-symbols-outlined">menu</span>
             </div>
         </div>
@@ -23,8 +26,8 @@
                     <li><a href="/logged-in/landlord/index.php">Properties</a></li>
                     <li><a href="/logged-in/landlord/add_property.php">Add a new property</a></li>
                     <li><a href="/logged-in/landlord/generate_lease.php">Generate lease</a></li>
-                    <li><a href="/logged-in/landlord/account.php">Account Settings</a></li>
                     <li><a href="/property-search.php">Search</a></li>
+                    <li><a href="/logged-in/landlord/account.php">Account Settings</a></li>
                 </menu>
             </nav>
         </div>
