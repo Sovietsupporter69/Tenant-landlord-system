@@ -504,7 +504,7 @@
     .maintenance a button{
         width: 100%;
     }
-    .maintenance a{
+    .maintenance a,.rent a{
         width: 100px;
     }
     .img-upload-frm{

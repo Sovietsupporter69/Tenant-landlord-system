@@ -28,7 +28,7 @@ $result = $stmt->get_result();
 function render_leased($end_date, $address, $postcode, $image, $landlord_email) {
     $code = <<<EOT
     <div class="property">
-    <a href="">
+    <a href="rent-viewer.php">
     <div class="lease-image">
     <img src="/images/$image" alt="property">
     </div>

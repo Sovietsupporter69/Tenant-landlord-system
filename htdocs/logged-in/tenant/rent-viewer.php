@@ -12,7 +12,6 @@ function render_rent($amount, $date) {
     <div class="payment">
         <p>£$amount</p>
         <p>$date</p>
-        <button>Details</button>
     </div>
     EOT;
     echo($code);
@@ -35,7 +34,9 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
         <div class="rent-due">
             <p>£800</p>
         </div>
-        <button>Pay</button>
+        <a href="rent-payment.php">
+            <button>Pay</button>
+        </a>
         <div class="payment-history">
             <div class="payments">
                 <a href="">
@@ -46,7 +47,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
                         }
                     }
                     else {
-                        echo("<p>You have no properties to display</p>");
+                        echo("<p>You have payments to display</p>");
                     }
                     ?>
                 </a>

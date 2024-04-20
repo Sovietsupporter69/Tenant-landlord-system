@@ -17,7 +17,7 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/private/banners/tenant.php")
     <section class="maintenance">
         <h2>Pay Rent</h2>
         <div class="pay-form">
-        <form action="">
+        <form action="index.php" method="POST">
             <label for="cardNum">Card Number:</label>
             <input type="text" name="cardNum" id="cardNum"required minlength="16" maxlength="16">
             <label for="cardName">Card Holder name:</label>
