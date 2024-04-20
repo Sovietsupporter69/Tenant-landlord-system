@@ -1,5 +1,5 @@
 <?php
-//require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/check_auth.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/private/php/check_auth.php");
 
 
 // these variables define properties about the page
