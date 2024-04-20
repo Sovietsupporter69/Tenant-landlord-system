@@ -670,4 +670,8 @@
     p.username {
         font-weight: bold;
     }
+
+    .closebtn {
+        color: white;
+    }
 }
