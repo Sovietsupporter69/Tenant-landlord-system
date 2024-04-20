@@ -147,7 +147,7 @@ if ($user_logged_in) {
     <section class="home-info">
         <h3>Uks most trusted rental website</h3>
         <p class="intro-para">
-        Welcome to pur tenancy mangament website, the uks leading tenancy website since 2011. 
+        Welcome to our tenancy mangament website, the uks leading tenancy website since 2011. 
         We provide all types of accomodation from country cottages to inner city appartments.
          Please feel free to browse all the properties we have on offer.
         </p>
