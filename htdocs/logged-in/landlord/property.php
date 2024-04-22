@@ -78,7 +78,7 @@ echo("]</script>");
     <a href="add_images.php">
         <button>Add Images</button>
     </a>
-    <a href="edit-images.php">
+    <a href="edit_images.php">
         <button>Edit Images</button>
     </a>
     <a href="edit_property.php">
