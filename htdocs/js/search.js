@@ -59,7 +59,7 @@ function render(id, image, description, address, postcode, rent) {
     var innerhtml = `
         <div class="property">
             <div class="lease-image">
-                <img src="/images/${image}" alt="property">
+                <img loading="lazy" src="/images/${image}" alt="property">
             </div>
             <div class="lease-info">
                 <h3>${description}</h3>
